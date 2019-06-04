@@ -45,7 +45,7 @@ function ivanicof_custom_styles() {
 
     if ( $site_title_font) {
 		$font_pieces = explode(":", $site_title_font);
-		$custom .= ".site-title a{ 
+		$custom .= ".site-title{ 
                         font-family: $font_pieces[0];
                         font-weight:$site_title_font_weight; 
                         font-style:$site_title_font_style; 
@@ -184,10 +184,7 @@ function ivanicof_custom_styles() {
 
             }";
 
-        /* if($sidebar == "no-sidebar"){
-            $custom .=".widget-area{display:none;}";
-        } */
-
+       
     }
 
     if( !empty($custom) ){ ?>

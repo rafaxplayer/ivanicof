@@ -14,7 +14,7 @@ if ( ! function_exists( 'ivanicof_setting_default' ) ) {
 		$customizer_defaults = array(
 			'ivanicof_typograpphy_site_title'  			=> 'Norican',
 			'ivanicof_typograpphy_titles'      			=> 'Unna',
-			'ivanicof_typograpphy_texts'       			=> 'Roboto',
+			'ivanicof_typograpphy_texts'       			=> 'Open Sans',
 			'ivanicof_sidebar'                 			=> 'sidebar-right',
 			'ivanicof_content_width'           			=> 100,
 			'ivanicof_typograpphy_site_title_weight' 	=> '400',

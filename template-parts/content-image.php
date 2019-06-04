@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying quote posts
+ * Template part for displaying image post
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -8,7 +8,6 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
@@ -40,18 +39,17 @@
 
 	</header><!-- .entry-header -->
 		
-	<?php ivanicof_post_thumbnail();?>
+    <?php ivanicof_post_thumbnail();
+
+    if( is_single() || '' === get_the_post_thumbnail()):?>
 	
 	<div class="entry-content">
-		<?php
-	
-			the_content();
-			ivanicof_entry_tags();
-			wp_link_pages();
-		
-		?>
-
-	</div><!-- .entry-content -->
+	<?php	
+		the_content();
+		ivanicof_entry_tags();
+        wp_link_pages();?>
+    </div><!-- .entry-content -->
+	<?php endif; ?>
 	
 </article><!-- #post-<?php the_ID(); ?> -->
 

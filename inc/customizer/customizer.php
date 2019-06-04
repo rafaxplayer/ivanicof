@@ -300,7 +300,7 @@ function ivanicof_customize_register( $wp_customize ) {
 
 	// sidebar
 	$wp_customize->add_setting( 'ivanicof_sidebar' , array(
-		'default'           => ivanicof_setting_default('sidebar-right'),
+		'default'           => ivanicof_setting_default('ivanicof_sidebar'),
 		'sanitize_callback' => 'sanitize_text_field',
 		
 	));
@@ -487,42 +487,7 @@ add_action( 'customize_preview_init', 'ivanicof_customize_preview_js' );
 //Sanitizes Fonts
 function ivanicof_sanitize_fonts( $input ) {
 	$valid = ivanicof_get_google_fonts();
-	/* $valid = array(
-		'Source Sans Pro:400,700,400italic,700italic' => 'Source Sans Pro',
-		'Open Sans:400italic,700italic,400,700' => 'Open Sans',
-		'Oswald:400,700' => 'Oswald',
-		'Playfair Display:400,700,400italic' => 'Playfair Display',
-		'Montserrat:400,700' => 'Montserrat',
-		'Raleway:400,700' => 'Raleway',
-		'Droid Sans:400,700' => 'Droid Sans',
-		'Lato:400,700,400italic,700italic' => 'Lato',
-		'Arvo:400,700,400italic,700italic' => 'Arvo',
-		'Lora:400,700,400italic,700italic' => 'Lora',
-		'Merriweather:400,300italic,300,400italic,700,700italic' => 'Merriweather',
-		'Oxygen:400,300,700' => 'Oxygen',
-		'PT Serif:400,700' => 'PT Serif',
-		'PT Sans:400,700,400italic,700italic' => 'PT Sans',
-		'PT Sans Narrow:400,700' => 'PT Sans Narrow',
-		'Cabin:400,700,400italic' => 'Cabin',
-		'Fjalla One:400' => 'Fjalla One',
-		'Francois One:400' => 'Francois One',
-		'Josefin Sans:400,300,600,700' => 'Josefin Sans',
-		'Libre Baskerville:400,400italic,700' => 'Libre Baskerville',
-		'Pacifico:400' => 'Pacifico',
-		'Arimo:400,700,400italic,700italic' => 'Arimo',
-		'Ubuntu:400,700,400italic,700italic' => 'Ubuntu',
-		'Unna:400,400italic,700,700italic' => 'Unna',
-		'Norican' => 'Norican',
-		'Bitter:400,700,400italic' => 'Bitter',
-		'Droid Serif:400,700,400italic,700italic' => 'Droid Serif',
-		'Roboto:400,400italic,700,700italic' => 'Roboto',
-		'Open Sans Condensed:700,300italic,300' => 'Open Sans Condensed',
-		'Roboto Condensed:400italic,700italic,400,700' => 'Roboto Condensed',
-		'Roboto Slab:400,700' => 'Roboto Slab',
-		'Source Serif Pro:400,600,700' => 'Source Serif Pro',
-		'Yanone Kaffeesatz:400,700' => 'Yanone Kaffeesatz',
-		'Rokkitt:400' => 'Rokkitt',
-	); */
+	
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;
 	} else {

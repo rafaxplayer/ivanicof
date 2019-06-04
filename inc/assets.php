@@ -15,7 +15,6 @@ function checkcdn_is_load($cdn,$arraycdns){
 }
 function ivanicof_scripts() {
 
-
 	wp_enqueue_style( 'ivanicof-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'assets/css/font-awesome.min.css' , array(), '4.7', 'all' );
@@ -42,7 +41,7 @@ function ivanicof_scripts() {
 		wp_enqueue_style( 'ivanicof-site-title-font', '//fonts.googleapis.com/css?family='. $site_title_font );
 		array_push($cdns,$site_title_font);
 	} else {
-		wp_enqueue_style( 'ivanicof-site-title-font', '//fonts.googleapis.com/css?family=Unna:400,400italic,700,700italic');
+		wp_enqueue_style( 'ivanicof-site-title-font', '//fonts.googleapis.com/css?family=Norican');
 		array_push($cdns,'Unna:400,400italic,700,700italic');
 	}
 
@@ -53,8 +52,8 @@ function ivanicof_scripts() {
 		}
 				
 	} else {
-		if(!in_array( 'Source+Serif+Pro:400,600,700' , $cdns )){
-			wp_enqueue_style( 'ivanicof-titles-font', '//fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700');
+		if(!in_array( 'Unna:400,400italic,700,700italic' , $cdns )){
+			wp_enqueue_style( 'ivanicof-titles-font', '//fonts.googleapis.com/css?family=Unna:400,400italic,700,700italic');
 			array_push($cdns,'Source+Serif+Pro:400,600,700');
 		}
 				
@@ -66,8 +65,8 @@ function ivanicof_scripts() {
 			array_push($cdns,$texts_font);
 		}
 	} else {
-		if(!in_array( 'Montserrat:400,300,400italic,700,600' , $cdns )){
-			wp_enqueue_style( 'ivanicof-texts-font', '//fonts.googleapis.com/css?family=Montserrat:400,300,400italic,700,600');
+		if(!in_array( 'Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap' , $cdns )){
+			wp_enqueue_style( 'ivanicof-texts-font', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
 			array_push($cdns,'Montserrat:400,300,400italic,700,600');
 		}
 	}

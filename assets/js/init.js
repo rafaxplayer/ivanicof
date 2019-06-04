@@ -15,6 +15,7 @@ jQuery(document).ready(function ($) {
         $buttonDown = $('#button-down'),
         $buttonClose = $('#close-button'),
         $buttonUp = $('#button-up');
+        
 
     jQuery(window).on('scroll', function() { displaybuttonUp() });
 
@@ -32,7 +33,8 @@ jQuery(document).ready(function ($) {
     
     function displaybuttonUp(){
         var $top = jQuery(this).scrollTop();
-            
+        console.log(jQuery(this).scrollTop());
+        
         if ($top >= $header.outerHeight(true)) {
             $buttonUp.css({ 'bottom': '2rem' });
             
@@ -45,14 +47,13 @@ jQuery(document).ready(function ($) {
             $menu.removeClass('fixed');
             $('.main-navigation').css({'top':'0'})
         }
-
         
     }
 
     displaybuttonUp();
 
     
-      $('.flexslider').flexslider({
+    $('.flexslider').flexslider({
         animation: "slide",
         selector: ".slides > li",
         animationLoop: true,
@@ -60,8 +61,9 @@ jQuery(document).ready(function ($) {
         nextText: "",
         controlNav: false,
         smoothHeight: true,
+        itemWidth:300,
         itemMargin: 5
-      });
+    });
     
 
 } );
