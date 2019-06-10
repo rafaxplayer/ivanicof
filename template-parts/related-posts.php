@@ -20,15 +20,8 @@
      'post__not_in' => array($post->ID), // Ensure that the current post is not displayed
      'orderby' => 'rand', // Randomize the results
      'cat' => $catidlist, // Select posts in the same categories as the current post
- ); 
+ );
 
- /* $custom_query_args = array( 
-    'posts_per_page' => 30, // Number of related posts to display
-    'post_type' => 'post',
-    
-); */
-
- 
  // Initiate the custom query
  $custom_query = new WP_Query( $custom_query_args );
 
@@ -38,13 +31,21 @@
 
     echo '<div class="slider-wrap"><h2 class="flexslider-title">'.__('Related Posts','ivanicof').'</h2>';?>
  
- <div class="iv_related_posts flexslider ">
+ <div class="flexslider ">
     <ul class="slides">
 
  <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
                 
      <li>
-        <?php the_post_thumbnail('thumbnail'); ?>
+        <?php 
+            if(!has_post_thumbnail() || '' == get_the_post_thumbnail()):?>
+
+                <img src="<?php echo trailingslashit( get_template_directory_uri() ).'assets/images/300.png';?>" alt="">
+                
+        <?php else:
+                the_post_thumbnail('thumbnail'); 
+            
+            endif; ?>
         <a href="<?php echo get_the_permalink(); ?>" class="flex-caption"><?php the_title('<h3>','</h3>'); ?></a>
        
      </li>

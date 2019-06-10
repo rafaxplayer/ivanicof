@@ -13,17 +13,17 @@ if ( !defined( 'ABSPATH' ) ) { exit; }
 function ivanicof_custom_styles() {
 
     //Fonts
-    $site_title_font= esc_html(get_theme_mod('ivanicof_typograpphy_site_title',ivanicof_setting_default('ivanicof_typograpphy_site_title')));
-    $site_title_font_weight= esc_html(get_theme_mod('ivanicof_typograpphy_site_title_weight',ivanicof_setting_default('ivanicof_typograpphy_site_title_weight')));
-    $site_title_font_style= esc_html(get_theme_mod('ivanicof_typograpphy_site_title_style',ivanicof_setting_default('ivanicof_typograpphy_site_title_style')));
+    $site_title_font= esc_html(get_theme_mod('ivanicof_typography_site_title',ivanicof_setting_default('ivanicof_typography_site_title')));
+    $site_title_font_weight= esc_html(get_theme_mod('ivanicof_typography_site_title_weight',ivanicof_setting_default('ivanicof_typography_site_title_weight')));
+    $site_title_font_style= esc_html(get_theme_mod('ivanicof_typography_site_title_style',ivanicof_setting_default('ivanicof_typography_site_title_style')));
 
-    $titles_font = esc_html(get_theme_mod('ivanicof_typograpphy_titles',ivanicof_setting_default('ivanicof_typograpphy_titles')));
-    $titles_font_weight= esc_html(get_theme_mod('ivanicof_typograpphy_titles_weight',ivanicof_setting_default('ivanicof_typograpphy_titles_weight')));
-    $titles_font_style= esc_html(get_theme_mod('ivanicof_typograpphy_titles_style',ivanicof_setting_default('ivanicof_typograpphy_titles_style')));
+    $titles_font = esc_html(get_theme_mod('ivanicof_typography_titles',ivanicof_setting_default('ivanicof_typography_titles')));
+    $titles_font_weight= esc_html(get_theme_mod('ivanicof_typography_titles_weight',ivanicof_setting_default('ivanicof_typography_titles_weight')));
+    $titles_font_style= esc_html(get_theme_mod('ivanicof_typography_titles_style',ivanicof_setting_default('ivanicof_typography_titles_style')));
 
-    $texts_font = esc_html(get_theme_mod('ivanicof_typograpphy_texts',ivanicof_setting_default('ivanicof_typograpphy_texts')));
-    $texts_font_weight= esc_html(get_theme_mod('ivanicof_typograpphy_texts_weight',ivanicof_setting_default('ivanicof_typograpphy_texts_weight')));
-    $texts_font_style= esc_html(get_theme_mod('ivanicof_typograpphy_texts_style',ivanicof_setting_default('ivanicof_typograpphy_texts_style')));
+    $texts_font = esc_html(get_theme_mod('ivanicof_typography_texts',ivanicof_setting_default('ivanicof_typography_texts')));
+    $texts_font_weight= esc_html(get_theme_mod('ivanicof_typography_texts_weight',ivanicof_setting_default('ivanicof_typography_texts_weight')));
+    $texts_font_style= esc_html(get_theme_mod('ivanicof_typography_texts_style',ivanicof_setting_default('ivanicof_typography_texts_style')));
 
     // header image
     $image_header_overlap = get_theme_mod('ivanicof_header_image_overlap',ivanicof_setting_default('ivanicof_header-image-overlap'));
@@ -54,7 +54,7 @@ function ivanicof_custom_styles() {
 
 	if ( $titles_font ) {
 		$font_pieces = explode(":", $titles_font);
-		$custom .= "h1, h2, h3, h4, h5, h6,.entry-title a,.entry-title,.widget.title{ 
+		$custom .= "h1, h2, h3, h4, h5, h6,.entry-title a,.entry-title,.widget.title,.main-navigation{ 
                         font-family: $font_pieces[0];
                         font-weight: $titles_font_weight; 
                         font-style: $titles_font_style; }\n";

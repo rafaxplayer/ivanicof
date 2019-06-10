@@ -134,12 +134,7 @@ if ( ! function_exists( 'ivanicof_post_thumbnail' ) ) :
 endif;
 
 if ( ! function_exists( 'ivanicof_post_format' ) ) :
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 */
+	
 	function ivanicof_post_format($format) {
 		if('' === $format && ! is_sticky( )):
 			return;

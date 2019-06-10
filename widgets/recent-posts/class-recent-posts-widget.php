@@ -19,9 +19,11 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
             $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-            $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
-            if ( ! $number )
-                $number = 5;
+            $number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 6;
+            if ( ! $number ){
+                $number = 6;
+            }
+                
             $show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
             /**
@@ -51,12 +53,12 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 <li>
                 <a href="<?php the_permalink(); ?>">
                     <?php if(has_post_thumbnail()):
-                            the_post_thumbnail('widget-posts'); 
-                        endif; ?>
+                            the_post_thumbnail('thumbnail'); 
+                    endif; ?>
                     <div class="widget_info">
                         <?php get_the_title() ? the_title() : the_ID(); ?>
                         <?php if ( $show_date ) : ?>
-                            <span class="post-date"><?php echo get_the_date(); ?></span>
+                            <span class="post-date"><?php echo get_the_date('d M Y'); ?></span>
                         <?php endif; ?>
                     </div>
                     </a>
@@ -71,6 +73,12 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
             endif;
         }
 }
+// Enqueue css
+add_action( 'wp_enqueue_scripts', 'ivanicof_wd_re_posts_style' );
+function ivanicof_wd_re_posts_style() {
+    wp_enqueue_style( 'ivanicof_re_widget_styles', trailingslashit(get_template_directory_uri()) . 'widgets/recent-posts/recent-posts.css' );
+}
+
 function ivanicof_recent_widget_registration() {
   unregister_widget('WP_Widget_Recent_Posts');
   register_widget('Ivanicof_Recent_Posts_Widget');

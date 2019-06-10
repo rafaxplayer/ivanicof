@@ -16,6 +16,7 @@ function ivanicof_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->remove_control('background_color');
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -116,8 +117,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_subtitle_color_control',
-		array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_subtitle_color_control',array(
 			'label' 	  => esc_html__( 'Color for site subtitle','ivanicof' ),
 			'section' 	  => 'colors',
 			'settings'	  => 'ivanicof_subtitle_color',
@@ -129,8 +129,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_color_desktop_control',
-		array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_color_desktop_control',array(
 			'label' 	  => esc_html__( 'Background color for main menu on big devices','ivanicof' ),
 			'section' 	  => 'colors',
 			'settings'	  => 'ivanicof_main_menu_color_desktop',
@@ -143,147 +142,144 @@ function ivanicof_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	));
 
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_color_mobile_control',
-		array(
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_color_mobile_control',array(
 			'label' 	  => esc_html__( 'Background color for main menu on mobile devices','ivanicof' ),
 			'section' 	  => 'colors',
 			'settings'	  => 'ivanicof_main_menu_color_mobile',
 		)
 	) );
-
 	
 
-
 	/* Typography section */
-	$wp_customize->add_section( 'ivanicof_typograpphy_section' , array(
-		'title'       => esc_html__( 'Typograpphy Options', 'ivanicof' ),
+	$wp_customize->add_section( 'ivanicof_typography_section' , array(
+		'title'       => esc_html__( 'typography Options', 'ivanicof' ),
 		'panel'		  => 'ivanicof_theme_options_panel',
 		'description' => esc_html__('Set google fonts for texts','ivanicof'),
 	));
 
 	//Site Title
-	$wp_customize->add_setting( 'ivanicof_typograpphy_site_title' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_site_title' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_fonts',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_site_title')
+		'default'           => ivanicof_setting_default('ivanicof_typography_site_title')
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_site_title_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_site_title_control', array(
 		'label'      => esc_html__( 'Google font for site title', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_site_title',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_site_title',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_google_fonts()
 	));
 
 	//font weight
-	$wp_customize->add_setting( 'ivanicof_typograpphy_site_title_weight' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_site_title_weight' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_weights',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_site_title_weight'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_site_title_weight'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_site_title_weight_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_site_title_weight_control', array(
 		'label'      => esc_html__( 'Font weight for site title', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_site_title_weight',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_site_title_weight',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_weights()
 	));
 
 	//font style
-	$wp_customize->add_setting( 'ivanicof_typograpphy_site_title_style' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_site_title_style' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_styles',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_site_title_style'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_site_title_style'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_site_title_style_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_site_title_style_control', array(
 		'label'      => esc_html__( 'Font style for site title', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_site_title_style',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_site_title_style',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_styles()
 	));
 
 
 	//Titles
-	$wp_customize->add_setting( 'ivanicof_typograpphy_titles' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_titles' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_fonts',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_titles'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_titles'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_titles_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_titles_control', array(
 		'label'      => esc_html__( 'Google font for titles', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_titles',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_titles',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_google_fonts()
 	));
 
 	//font weight
-	$wp_customize->add_setting( 'ivanicof_typograpphy_titles_weight' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_titles_weight' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_weights',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_titles_weight'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_titles_weight'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_titles_weight_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_titles_weight_control', array(
 		'label'      => esc_html__( 'Font weight for titles', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_titles_weight',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_titles_weight',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_weights()
 	));
 
 	//font style
-	$wp_customize->add_setting( 'ivanicof_typograpphy_titles_style' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_titles_style' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_styles',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_titles_style'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_titles_style'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_titles_style_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_titles_style_control', array(
 		'label'      => esc_html__( 'Font Style for titles', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_titles_style',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_titles_style',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_styles()
 	));
 
 	// Body texts
-	$wp_customize->add_setting( 'ivanicof_typograpphy_texts' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_texts' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_fonts',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_texts'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_texts'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_texts_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_texts_control', array(
 		'label'      => esc_html__( 'Google font for texts', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_texts',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_texts',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_google_fonts()
 	));
 
 	//font weight
-	$wp_customize->add_setting( 'ivanicof_typograpphy_texts_weight' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_texts_weight' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_weights',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_texts_weight'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_texts_weight'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_texts_weight_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_texts_weight_control', array(
 		'label'      => esc_html__( 'Font weight for texts', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_texts_weight',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_texts_weight',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_weights()
 	));
 
 	//font style
-	$wp_customize->add_setting( 'ivanicof_typograpphy_texts_style' , array(
+	$wp_customize->add_setting( 'ivanicof_typography_texts_style' , array(
 		'sanitize_callback' => 'ivanicof_sanitize_font_styles',
-		'default'           => ivanicof_setting_default('ivanicof_typograpphy_texts_style'),
+		'default'           => ivanicof_setting_default('ivanicof_typography_texts_style'),
 	));
 		
-	$wp_customize->add_control( 'ivanicof_typograpphy_texts_style_control', array(
+	$wp_customize->add_control( 'ivanicof_typography_texts_style_control', array(
 		'label'      => esc_html__( 'Font Style for texts', 'ivanicof' ),
-        'section'    => 'ivanicof_typograpphy_section',
-		'settings'   => 'ivanicof_typograpphy_texts_style',
+        'section'    => 'ivanicof_typography_section',
+		'settings'   => 'ivanicof_typography_texts_style',
 		'type'		 => 'select',
 		'choices'    => ivanicof_get_font_styles()
 	));
@@ -327,12 +323,12 @@ function ivanicof_customize_register( $wp_customize ) {
 	)));
 
 	// Contet width %
-	$wp_customize->add_setting( 'ivanicof_content_width',
-	array(
+	$wp_customize->add_setting( 'ivanicof_content_width',array(
 		'default'   		=> ivanicof_setting_default('ivanicof_content_width'),
 		'transport' 		=> 'postMessage',
 		'sanitize_callback' => 'absint'
 	));
+
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'ivanicof_content_width_control',
 		array(
 			'label' 	  => esc_html__( 'Content Width percentage','ivanicof' ),
@@ -387,8 +383,7 @@ function ivanicof_customize_register( $wp_customize ) {
     ));
 
 	/* Facebook*/
-	$wp_customize->add_setting( 'ivanicof_facebook', 
-		array( 
+	$wp_customize->add_setting( 'ivanicof_facebook', array( 
 			'sanitize_callback' => 'esc_url_raw'
 		) 
 	);
@@ -401,8 +396,7 @@ function ivanicof_customize_register( $wp_customize ) {
     ));
 
 	/* Twitter*/
-	$wp_customize->add_setting( 'ivanicof_twitter', 
-	array( 
+	$wp_customize->add_setting( 'ivanicof_twitter', array( 
 		'sanitize_callback' => 'esc_url_raw') );
 
 	$wp_customize->add_control( 'ivanicof_twitter_control', array(
@@ -413,8 +407,7 @@ function ivanicof_customize_register( $wp_customize ) {
 	));
 
 	/* Linkedin*/
-	$wp_customize->add_setting( 'ivanicof_linkedin', 
-	array( 
+	$wp_customize->add_setting( 'ivanicof_linkedin', array( 
 		'sanitize_callback' => 'esc_url_raw') );
 
 	$wp_customize->add_control( 'ivanicof_linkedin_control', array(
@@ -447,6 +440,19 @@ function ivanicof_customize_register( $wp_customize ) {
 			'settings'	  => 'ivanicof_footer_social_icons',
 		)
 	) );
+
+	/*Instagram*/     
+	$wp_customize->add_setting( 'ivanicof_footer_text', array( 
+			'sanitize_callback' => 'sanitize_text_field'
+		) 
+	);
+
+	$wp_customize->add_control( 'ivanicof_footer_text_control', array(
+		'label'      => esc_html__( 'Text info for footer', 'ivanicof' ),
+        'section'    => 'ivanicof_footer_section',
+        'settings'    => 'ivanicof_footer_text',
+		
+	));
 
 	/* End Footer section */
 

@@ -33,7 +33,6 @@ jQuery(document).ready(function ($) {
     
     function displaybuttonUp(){
         var $top = jQuery(this).scrollTop();
-        console.log(jQuery(this).scrollTop());
         
         if ($top >= $header.outerHeight(true)) {
             $buttonUp.css({ 'bottom': '2rem' });
@@ -60,10 +59,11 @@ jQuery(document).ready(function ($) {
         prevText: "",
         nextText: "",
         controlNav: false,
-        smoothHeight: true,
         itemWidth:300,
         itemMargin: 5
     });
+
+    
     
 
 } );

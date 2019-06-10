@@ -11,16 +11,55 @@ function ivanicof_register_about_widget(){
     register_widget( 'Ivanicof_About_widget' );
 }
 
-// Enqueue additional admin scripts
-add_action('admin_enqueue_scripts', 'ivanicof_wdscript');
-function ivanicof_wdscript() {
-    wp_enqueue_media();
-    wp_enqueue_script('ivanicof_widgets__script', trailingslashit(get_template_directory_uri()) . 'assets/js/widgets.js', false, '1.0.0', true);
+// add image size
+add_action( 'after_setup_theme', 'ivanicof_about_widget_image_size' );
+function ivanicof_about_widget_image_size(){
+    add_image_size( 'about_widget_image', 200, 200, true );
 }
+
+// Enqueue css
+add_action( 'wp_enqueue_scripts', 'ivanicof_wd_about_style' );
+function ivanicof_wd_about_style() {
+    wp_enqueue_style( 'ivanicof_wd_about_styles', trailingslashit(get_template_directory_uri()) . 'widgets/about-widget/about-widget.css' );
+}
+
+// Enqueue additional admin scripts
+add_action('admin_enqueue_scripts', 'ivanicof_wd_about_script');
+function ivanicof_wd_about_script() {
+    wp_enqueue_media();
+    wp_enqueue_script('ivanicof_wd_about_script', trailingslashit(get_template_directory_uri()) . 'widgets/about-widget/about-widget.js', false, '1.0.0', true);
+}
+
+// add custom sizes to wp_prepare_attachment_for_js
+function wpse_110060_image_sizes_js( $response, $attachment, $meta ){
+
+	$size_array = array( 'about_widget_image') ;
+
+	foreach ( $size_array as $size ):
+
+			if ( isset( $meta['sizes'][ $size ] ) ) {
+					$attachment_url = wp_get_attachment_url( $attachment->ID );
+					$base_url = str_replace( wp_basename( $attachment_url ), '', $attachment_url );
+					$size_meta = $meta['sizes'][ $size ];
+
+					$response['sizes'][ $size ] = array(
+							'height'        => $size_meta['height'],
+							'width'         => $size_meta['width'],
+							'url'           => $base_url . $size_meta['file'],
+							'orientation'   => $size_meta['height'] > $size_meta['width'] ? 'portrait' : 'landscape',
+					);
+			}
+
+	endforeach;
+
+	return $response;
+}
+add_filter ( 'wp_prepare_attachment_for_js',  'wpse_110060_image_sizes_js' , 10, 3  );
 
 class Ivanicof_About_widget extends WP_Widget {
 
     public function __construct() {
+
         $widget_ops = array(
             'classname' => 'Ivanicof_About_widget',
             'description' => 'About me information',
@@ -51,7 +90,7 @@ class Ivanicof_About_widget extends WP_Widget {
         }
 
         if($image){
-            echo '<img src="'.esc_url($instance["image_uri"]).'"style="border-radius:50%"/>';
+            echo '<img src="'.esc_url($instance["image_uri"]).'"/>';
         }
 
         // Check if name is set
@@ -60,19 +99,17 @@ class Ivanicof_About_widget extends WP_Widget {
         }
 
         // Check if textarea is set
-       
         if( $textarea ) {
             echo '<p class="about_widget_textarea">'.esc_html($textarea).'</p>';
         }
-
-        
-        
+                
         echo '</div>';
         echo $after_widget;
         
     }
     
     public function form( $instance ) {
+
         $title = '';
         if( !empty( $instance['title'] ) ) {
             $title = $instance['title'];
@@ -105,6 +142,7 @@ class Ivanicof_About_widget extends WP_Widget {
             <img class="<?php echo $this->id ?>_img" src="<?php echo $image; ?>" style="margin:0;padding:0;max-width:100%;display:block"/>
             <input type="text" class="widefat <?php echo $this->id ?>_url" name="<?php echo $this->get_field_name( 'image_uri' ); ?>" value="<?php echo $instance['image_uri']; ?>" style="margin-top:5px;" />
             <input type="button" id="<?php echo $this->id ?>" class="button button-primary js_custom_upload_media" value="Upload Image" style="margin-top:5px;" />
+            
         </p>
 
         <p>
@@ -128,13 +166,16 @@ class Ivanicof_About_widget extends WP_Widget {
     
     // save options
    function update( $new_instance, $old_instance ) {
+
     $instance = $old_instance;
     $instance['title']     = isset( $new_instance['title'] ) ? wp_strip_all_tags( $new_instance['title'] ) : '';
-    $instance['image_uri'] = isset( $new_instance['image_uri'] ) ? wp_strip_all_tags( $new_instance['image_uri'] ) : '';
+    $instance['image_uri'] = isset( $new_instance['image_uri'] ) ? esc_url( $new_instance['image_uri'] ) : '';
     $instance['name']      = isset( $new_instance['name'] ) ? wp_strip_all_tags( $new_instance['name'] ) : '';
 	$instance['text']      = isset( $new_instance['text'] ) ? wp_strip_all_tags( $new_instance['text'] ) : '';
 	
 	return $instance;
    }
+
+  
         
 }

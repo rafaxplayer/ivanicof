@@ -120,7 +120,7 @@ html[xmlns] .flexslider .slides {
   display: block;
   width: 40px;
   height: 40px;
-  padding: 0 .5rem;
+  padding: .4rem .9rem;
   border-radius: 50%;
   background-color: #e09813db;
   position: absolute;
@@ -139,7 +139,7 @@ html[xmlns] .flexslider .slides {
 }
 .flex-direction-nav a:before {
   font-family: "flexslider-icon";
-  font-size: 30px;
+  font-size: 20px;
   display: inline-block;
   content: '\f001';
   color: rgba(0, 0, 0, 0.8);

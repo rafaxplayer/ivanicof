@@ -57,9 +57,14 @@ require get_template_directory() . '/inc/assets.php';
 /**
  * widget about.
  */
-require get_template_directory() . '/widgets/class-about-widget.php';
+require get_template_directory() . '/widgets/about-widget/class-about-widget.php';
 
 /**
  * widget Recent posts.
  */
-require get_template_directory() . '/widgets/class-recent-posts-widget.php';
+require get_template_directory() . '/widgets/recent-posts/class-recent-posts-widget.php';
+
+/**
+ * widget Instagram (thanks meks).
+ */
+require get_template_directory() . '/widgets/instagram-widget/instagram-widget.php';

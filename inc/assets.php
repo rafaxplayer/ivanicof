@@ -31,9 +31,9 @@ function ivanicof_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	$site_title_font= esc_html(get_theme_mod('ivanicof_typograpphy_site_title',ivanicof_setting_default('ivanicof_typograpphy_site_title')));
-	$titles_font = esc_html(get_theme_mod('ivanicof_typograpphy_titles',ivanicof_setting_default('ivanicof_typograpphy_titles')));
-	$texts_font = esc_html(get_theme_mod('ivanicof_typograpphy_texts',ivanicof_setting_default('ivanicof_typograpphy_texts')));
+	$site_title_font= esc_html(get_theme_mod('ivanicof_typography_site_title',ivanicof_setting_default('ivanicof_typography_site_title')));
+	$titles_font = esc_html(get_theme_mod('ivanicof_typography_titles',ivanicof_setting_default('ivanicof_typography_titles')));
+	$texts_font = esc_html(get_theme_mod('ivanicof_typography_texts',ivanicof_setting_default('ivanicof_typography_texts')));
 
 	$cdns = array();
 

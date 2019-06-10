@@ -51,6 +51,7 @@ if ( ! function_exists( 'ivanicof_get_google_fonts' ) ) :
 		'Oswald:400,700' => 'Oswald',
 		'Playfair Display:400,700,400italic' => 'Playfair Display',
 		'Montserrat:400,700' => 'Montserrat',
+		'Lobster' => 'Lobster',
 		'Raleway:400,700' => 'Raleway',
 		'Droid Sans:400,700' => 'Droid Sans',
 		'Lato:400,700,400italic,700italic' => 'Lato',
@@ -74,7 +75,6 @@ if ( ! function_exists( 'ivanicof_get_google_fonts' ) ) :
 		'Bitter:400,700,400italic' => 'Bitter',
 		'Droid Serif:400,700,400italic,700italic' => 'Droid Serif',
 		'Roboto:400,400italic,700,700italic' => 'Roboto',
-		'Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap',
 		'Open Sans Condensed:700,300italic,300' => 'Open Sans Condensed',
 		'Roboto Condensed:400italic,700italic,400,700' => 'Roboto Condensed',
 		'Roboto Slab:400,700' => 'Roboto Slab',
@@ -151,7 +151,6 @@ if ( ! function_exists( 'ivanicof_gallery_to_slider' ) ) :
 	}
 	  
 endif;
-
 
 
 /**

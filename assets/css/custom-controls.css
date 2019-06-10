@@ -81,15 +81,13 @@ input[type="number"]:focus {
    ========================================================================== */
 
 .simple-notice-custom-control .customize-control-description {
-	line-height: 1.6
+	line-height: 1.6;
 }
 
 .simple-notice-custom-control code {
 	font-size: 90%;
 	padding: 2px 4px;
 }
-
-
 
 /* ==========================================================================
    Image Radio Buttons
@@ -105,15 +103,11 @@ input[type="number"]:focus {
 	border: 3px solid #2885bb;
 }
 
-
-
-
 /* ==========================================================================
    Toggle Switch
    ========================================================================== */
 .toggle-switch-control .customize-control-title {
-	
-	font-size:1.3em;
+	font-size: 1.3em;
 }
 
 .toggle-switch {
@@ -165,13 +159,13 @@ input[type="number"]:focus {
 	content: "ON";
 	padding-left: 8px;
 	background-color: #2885bb;
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 .toggle-switch-inner:after {
 	content: "OFF";
 	padding-right: 8px;
-	background-color: #EEEEEE;
+	background-color: #eeeeee;
 	color: #999999;
 	text-align: right;
 }
@@ -180,7 +174,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 16px;
 	margin: 3px;
-	background: #FFFFFF;
+	background: #ffffff;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -197,7 +191,3 @@ input[type="number"]:focus {
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
 	right: 0px;
 }
-
-
-
-
