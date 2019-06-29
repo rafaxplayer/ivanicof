@@ -366,6 +366,8 @@ textarea {
  */
 .search-form {
 	position: relative;
+	max-width: 400px;
+    margin: 0 auto;
 }
 .search-form input[type="search"] {
 	width: 100%;
@@ -525,8 +527,8 @@ html {
 *:before,
 *:after {
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	-webkit-box-sizing: inherit;
-	box-sizing: inherit;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {

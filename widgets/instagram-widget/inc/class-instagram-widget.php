@@ -45,7 +45,7 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 			'photos_number' => 9,
 			'columns' => 3,
 			'photo_space' => 1,
-			'container_size' => 300,
+			'container_size' => 500,
 			'transient_time' => DAY_IN_SECONDS,
 			'link_text' => __( 'Follow', 'ivanicof' ),
 		);
