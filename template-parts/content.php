@@ -10,10 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 	<header class="entry-header">
 		<?php
 		
-		if ( is_singular() ) :
+		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			
@@ -41,17 +42,19 @@
 	<div class="entry-content">
 		<?php
 		if(is_single()){
+
 			the_content();
 			ivanicof_entry_tags();
 			ivanicof_author_bio();
-			
-		
+					
 		}else{
+
 			the_excerpt();
 
 			echo '<div class="read_more"><a href="'.esc_url(get_permalink()).'">'.__('Read More','ivanicof').'</a><i class="fa fa-angle-double-right"></i></div>';
 			
 		}
+
 		ivanicof_entry_comments();
 
 		wp_link_pages();

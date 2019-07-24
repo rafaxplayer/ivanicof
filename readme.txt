@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFZBWTFKLCWYQ&source=url
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -26,7 +26,15 @@ ivanicof includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0.2 - Jul 24 2019 =
+* Code bug Fixes
+* Add two columns support on blog options
+* Add author template
+
+= 1.0.1 - Jul 06 2019 =
+* Code bug Fixes
+
+= 1.0.0 - May 12 2019 =
 * Initial release
 
 == Licences & credits==
@@ -34,3 +42,4 @@ ivanicof includes support for Infinite Scroll in Jetpack.
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * Flexslider 2 License: GPLv2 Source: http://flexslider.woothemes.com
+* Header photography, Unsplash License: Creative Commons Zero Source: https://unsplash.com/photos/TZiHZOvxv9E

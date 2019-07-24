@@ -33,7 +33,7 @@ function ivanicof_jetpack_setup() {
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
 			'author'     => '.byline',
-			'comment'    => '.comments-link',
+			'comment'    => '.comments-number',
 		),
 		'featured-images' => array(
 			'archive'    => true,
@@ -47,13 +47,16 @@ add_action( 'after_setup_theme', 'ivanicof_jetpack_setup' );
 /**
  * Custom render function for Infinite Scroll.
  */
-function ivanicof_infinite_scroll_render() {
-	while ( have_posts() ) {
+function ivanicof_infinite_scroll_render() {?>
+	<section class="posts-content">
+	<?php while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );
 		endif;
-	}
+	}?>
+	</section>
+	<?php
 }

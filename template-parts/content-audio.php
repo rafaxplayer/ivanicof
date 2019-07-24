@@ -45,18 +45,19 @@
 		$audio = get_media_embedded_in_content( $content, array( 'audio' ) );
 	}
 	 	
-
-	if(! empty($audio) && ! is_single()):
-		foreach ( $audio as $audio_html ) {
-			echo '<div class="entry-audio">';
-				echo $audio_html;
-			echo '</div>';
-		}
-	else:
-		ivanicof_post_thumbnail();
-    endif; 
+	if ( !is_single() ) :
+		if( !empty($audio) ):
+			foreach ( $audio as $audio_html ) {
+				echo '<div class="entry-audio">';
+					echo $audio_html;
+				echo '</div>';
+			}
+		else:
+			ivanicof_post_thumbnail();
+		endif; 
+	endif;
     
-	if(is_single()){ ?>
+	if(is_single()): ?>
 
 	<div class="entry-content">
 		<?php
@@ -67,7 +68,7 @@
 		?>
 
 	</div><!-- .entry-content -->
-		<?php } ?>
+<?php endif; ?>
 
 	
 </article><!-- #post-<?php the_ID(); ?> -->

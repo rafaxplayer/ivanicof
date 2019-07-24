@@ -72,7 +72,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		
 		
 	));
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_social_icons_control',
+	$wp_customize->add_control( new Ivanicof_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_social_icons_control',
 		array(
 			'label' 	  => esc_html__( 'Show/hide header social icons','ivanicof' ),
 			'section' 	  => 'ivanicof_header_section',
@@ -86,7 +86,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'ivanicof_switch_sanitize',
 	));
 
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_search_form_control',
+	$wp_customize->add_control( new Ivanicof_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_search_form_control',
 		array(
 			'label' 	  => esc_html__( 'Show/hide header search form','ivanicof' ),
 			'section' 	  => 'ivanicof_header_section',
@@ -101,7 +101,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'ivanicof_switch_sanitize',
 	));
 
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_button_down_control',
+	$wp_customize->add_control( new Ivanicof_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_header_button_down_control',
 		array(
 			'label' 	  => esc_html__( 'Show/hide header button down','ivanicof' ),
 			'section' 	  => 'ivanicof_header_section',
@@ -152,7 +152,7 @@ function ivanicof_customize_register( $wp_customize ) {
 
 	/* Typography section */
 	$wp_customize->add_section( 'ivanicof_typography_section' , array(
-		'title'       => esc_html__( 'typography Options', 'ivanicof' ),
+		'title'       => esc_html__( 'Typography Options', 'ivanicof' ),
 		'panel'		  => 'ivanicof_theme_options_panel',
 		'description' => esc_html__('Set google fonts for texts','ivanicof'),
 	));
@@ -301,7 +301,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		
 	));
 
-	$wp_customize->add_control( new Skyrocket_Image_Radio_Button_Custom_Control( $wp_customize, 'ivanicof_sidebar_control', array(
+	$wp_customize->add_control( new Ivanicof_Image_Radio_Button_Custom_Control( $wp_customize, 'ivanicof_sidebar_control', array(
 		'label'      => esc_html__( 'Show/Hide sidebar', 'ivanicof' ),
 		'section'    => 'ivanicof_layou_section',
 		'settings'   => 'ivanicof_sidebar',
@@ -343,6 +343,31 @@ function ivanicof_customize_register( $wp_customize ) {
 			  ),
 		)
 	) );
+
+	// blog columns
+	$wp_customize->add_setting( 'ivanicof_blog_columns' , array(
+		'default'           => ivanicof_setting_default('ivanicof_blog_columns'),
+		'sanitize_callback' => 'sanitize_text_field',
+		
+	));
+
+	$wp_customize->add_control( new Ivanicof_Image_Radio_Button_Custom_Control( $wp_customize, 'ivanicof_blog_columns_control', array(
+		'label'      => esc_html__( 'Blog columns', 'ivanicof' ),
+		'section'    => 'ivanicof_layou_section',
+		'settings'   => 'ivanicof_blog_columns',
+		'type'		 => 'select',
+		'choices'	 => array(
+			'one-column' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/one-column.png',
+				'name'  => esc_html__('One Column (Default)','ivanicof')
+			),
+			'two-columns' => array(
+				'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/two-columns.png',
+				'name'  => esc_html__('Two Columns','ivanicof')
+			),
+			
+		)
+	)));
 
 	/* End layout section */
 
@@ -433,7 +458,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		
 		
 	));
-	$wp_customize->add_control( new Skyrocket_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_footer_social_icons_control',
+	$wp_customize->add_control( new Ivanicof_Toggle_Switch_Custom_control( $wp_customize, 'ivanicof_footer_social_icons_control',
 		array(
 			'label' 	  => esc_html__( 'Show/hide footer social icons','ivanicof' ),
 			'section' 	  => 'ivanicof_footer_section',
@@ -544,6 +569,5 @@ function ivanicof_switch_sanitize( $input ) {
 
 if ( class_exists( 'WP_Customize_Control' ) ) {
 				
-	require_once( get_template_directory() . '/inc/customizer/custom-controls/separator-control.php' );
 	require_once( get_template_directory() . '/inc/customizer/custom-controls/custom-controls.php' );
 }

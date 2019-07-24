@@ -135,20 +135,16 @@ endif;
 
 if ( ! function_exists( 'ivanicof_post_format' ) ) :
 	
-	function ivanicof_post_format($format) {
-		if('' === $format && ! is_sticky( )):
-			return;
-		endif;?>
+	function ivanicof_post_format($format) {?>
 
 		<div class="iv-formats">
-		
+
 		<?php if(is_sticky()):?>
 
 			<div class="iv-format iv-sticky"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>							
 
 		<?php endif; 
 
-		
 		switch($format){
 			case "audio":
 				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-volume-off" aria-hidden="true"></i></a>';
@@ -171,7 +167,8 @@ if ( ! function_exists( 'ivanicof_post_format' ) ) :
 			default:
 			break;
 		}?>
-		</div><?php
+		</div>
+		<?php
 	
 
 	}

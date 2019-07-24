@@ -23,7 +23,7 @@ get_header();
 					?>
 				</h1>
 			</header><!-- .page-header -->
-
+			<section class="posts-content">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -36,9 +36,9 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
-
-			the_posts_navigation();
+			endwhile;?>
+			<section>
+			<?php ivanicof_pagination();
 
 		else :
 

@@ -11,14 +11,6 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 	protected $widget_slug = 'ivanicof_instagram';
 
 	/**
-	 * Unique identifier for localization.
-	 *
-	 * @since    1.0.0
-	 * @var      string
-	 */
-	protected $widget_text_domain = 'ivanicof-easy-instagram-widget';
-
-	/**
 	 * Default value holder
 	 *
 	 * @since    1.0.0

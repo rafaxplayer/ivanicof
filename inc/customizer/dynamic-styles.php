@@ -34,6 +34,9 @@ function ivanicof_custom_styles() {
     // Content width
     $content_width = esc_html(get_theme_mod('ivanicof_content_width',ivanicof_setting_default('ivanicof_content_width')));
     
+    //Blog columns 
+    $blog_columns = esc_html(get_theme_mod('ivanicof_blog_columns',ivanicof_setting_default('ivanicof_blog_columns')));
+    
     //Colors
     $subtitle_color = get_theme_mod('ivanicof_subtitle_color',ivanicof_setting_default('ivanicof_subtitle_color'));
     
@@ -101,6 +104,25 @@ function ivanicof_custom_styles() {
                             background-color:$main_menu_color_mobile;
                         }
                     }\n";
+    }
+
+    if($blog_columns){
+        if($blog_columns == "two-columns"){
+            $custom .="
+            @media screen and (min-width: 37.5em){
+                .posts-content{
+                    display:flex;
+                    flex-wrap:wrap;
+                }
+                .posts-content .post{
+                    flex:0 0 50%;
+                    max-width:50%;
+                    padding-left:15px;
+                    padding-right:15px;
+                }
+            }
+            ";
+        }
     }
 
     if($sidebar){

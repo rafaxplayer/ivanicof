@@ -34,7 +34,7 @@
  <div class="flexslider ">
     <ul class="slides">
 
- <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+    <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
                 
      <li>
         <?php 
@@ -49,14 +49,10 @@
         <a href="<?php echo get_the_permalink(); ?>" class="flex-caption"><?php the_title('<h3>','</h3>'); ?></a>
        
      </li>
-
- 
- <?php endwhile; ?>
- <?php else : ?>
-     <p><?php _e('Sorry, no related articles to display.','ivanicof'); ?></p>
- <?php endif;
- // Reset postdata
- wp_reset_postdata();?>
- </ul>
+    <?php endwhile; 
+    // Reset postdata
+    wp_reset_postdata();?>
+    </ul>
  </div>
-</div>
+ <?php endif; ?>
+    

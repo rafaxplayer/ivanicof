@@ -1,15 +1,19 @@
 .widget_recent_entries ul {
-	display: block;
+	display:flex;
+	flex-wrap: wrap;
 }
 
 .widget_recent_entries li {
-	width: 33.3333333%;
-	position: relative;
-	height: 100%;
-	padding: 2px 2px 0 2px;
-	float: left;
+	padding: 0.5px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333333333%;
+	flex: 0 0 33.333333333333%;
 }
-
+.widget_recent_entries li a{
+	display: block;
+	height: 100%;
+	position: relative;
+}
 .widget_recent_entries .widget_info {
 	position: absolute;
 	top: 0;

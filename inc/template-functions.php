@@ -159,19 +159,20 @@ endif;
 if ( ! function_exists( 'ivanicof_pagination' ) ) :
 
 	function ivanicof_pagination(){
-	   
-		if( !get_theme_mod('ivanicof_pagination_type','next-prev') === 'next-prev'){
-   
-		   the_posts_navigation();
-	  
-	  }else{
-	  
-		  the_posts_pagination( array(
-			  'prev_text'          => '<i class="fa fa-angle-left"></i> ' . esc_html__( 'Previous', 'ivanicof' ),
-			  'next_text'          => esc_html__( 'Next', 'ivanicof' ) . ' <i class="fa fa-angle-right"></i>',
-			  'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'ivanicof' ) . ' </span>',
-		  ) );
-	  } 
+		if( !class_exists( 'Jetpack' ) || (class_exists( 'Jetpack' ) && !Jetpack::is_module_active( 'infinite-scroll' )) ){
+			if( !get_theme_mod('ivanicof_pagination_type','next-prev') === 'next-prev'){
+	
+				the_posts_navigation();
+			
+				}else{
+			
+				the_posts_pagination( array(
+					'prev_text'          => '<i class="fa fa-angle-left"></i> ' . esc_html__( 'Previous', 'ivanicof' ),
+					'next_text'          => esc_html__( 'Next', 'ivanicof' ) . ' <i class="fa fa-angle-right"></i>',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'ivanicof' ) . ' </span>',
+				) );
+			} 
+		}
 	}
-   endif;
+endif;
 

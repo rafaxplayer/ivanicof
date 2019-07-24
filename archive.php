@@ -21,7 +21,7 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			<section class="posts-content">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -34,9 +34,9 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
-
-			the_posts_navigation();
+			endwhile;?>
+			</section>
+			<?php ivanicof_pagination();
 
 		else :
 

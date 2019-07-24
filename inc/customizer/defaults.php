@@ -16,6 +16,7 @@ if ( ! function_exists( 'ivanicof_setting_default' ) ) {
 			'ivanicof_typography_titles'      			=> 'Unna:400,400italic,700,700italic',
 			'ivanicof_typography_texts'       			=> 'Open Sans:400italic,700italic,400,700',
 			'ivanicof_sidebar'                 			=> 'sidebar-right',
+			'ivanicof_blog_columns'						=> 'one-column',
 			'ivanicof_content_width'           			=> 100,
 			'ivanicof_typography_site_title_weight' 	=> '400',
 			'ivanicof_typography_site_title_style' 	=> 'normal',

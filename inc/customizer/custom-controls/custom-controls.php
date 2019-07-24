@@ -1,6 +1,6 @@
 <?php
 /**
- * Skyrocket Customizer Custom Controls
+ * Ivanicof Customizer Custom Controls
  *
  */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
@@ -13,8 +13,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Skyrocket_Custom_Control extends WP_Customize_Control {
-		protected function get_skyrocket_resource_url() {
+	class Ivanicof_Custom_Control extends WP_Customize_Control {
+		protected function get_Ivanicof_resource_url() {
 			if( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
 				// We're in a plugin directory and need to determine the url accordingly.
 				return plugin_dir_url( __DIR__ );
@@ -32,7 +32,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Skyrocket_Image_Radio_Button_Custom_Control extends WP_Customize_Control {
+	class Ivanicof_Image_Radio_Button_Custom_Control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -41,7 +41,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
  		public function enqueue() {
-			wp_enqueue_style( 'skyrocket-custom-controls-css', get_stylesheet_directory_uri( ) . '/assets/css/custom-controls.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'Ivanicof-custom-controls-css', get_stylesheet_directory_uri( ) . '/assets/css/custom-controls.css', array(), '1.0', 'all' );
  		}
 		/**
 		 * Render the control in the customizer
@@ -75,7 +75,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Skyrocket_Simple_Notice_Custom_Control extends WP_Customize_Control {
+	class Ivanicof_Simple_Notice_Custom_Control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -123,7 +123,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	class Skyrocket_Toggle_Switch_Custom_control extends WP_Customize_Control {
+	class Ivanicof_Toggle_Switch_Custom_control extends WP_Customize_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -132,7 +132,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Enqueue our scripts and styles
 		 */
 		public function enqueue(){
-			wp_enqueue_style( 'skyrocket-custom-controls-css', get_stylesheet_directory_uri() . '/assets/css/custom-controls.css', array(), '1.0', 'all' );
+			wp_enqueue_style( 'Ivanicof-custom-controls-css', get_stylesheet_directory_uri() . '/assets/css/custom-controls.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer

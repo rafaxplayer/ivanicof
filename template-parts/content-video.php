@@ -13,7 +13,7 @@
 	<header class="entry-header">
 		<?php
 		
-		if ( is_singular() ) :
+		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			
@@ -45,18 +45,19 @@
 		$video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
 	}
 	 	
+	if ( ! is_single() ) :
+		if(! empty($video) ):
+			foreach ( $video as $video_html ) {
+				echo '<div class="entry-video">';
+					echo $video_html;
+				echo '</div>';
+			}
+		else:
+			ivanicof_post_thumbnail();
+		endif; 
+	endif;
 
-	if(! empty($video) && ! is_single()):
-		foreach ( $video as $video_html ) {
-			echo '<div class="entry-video">';
-				echo $video_html;
-			echo '</div>';
-		}
-	else:
-		ivanicof_post_thumbnail();
-	endif; 
-
-	if(is_single()){?>
+	if(is_single()): ?>
 
 	<div class="entry-content">
 		<?php
@@ -67,7 +68,7 @@
 		?>
 
 	</div><!-- .entry-content -->
-		<?php } ?>
+<?php endif; ?>
 
 	
 </article><!-- #post-<?php the_ID(); ?> -->
