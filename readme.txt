@@ -1,11 +1,11 @@
 === ivanicof ===
 
-Contributors: automattic
+Contributors: rafax
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFZBWTFKLCWYQ&source=url
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -29,7 +29,6 @@ ivanicof includes support for Infinite Scroll in Jetpack.
 = 1.0.2 - Jul 24 2019 =
 * Code bug Fixes
 * Add two columns support on blog options
-* Add author template
 
 = 1.0.1 - Jul 06 2019 =
 * Code bug Fixes
@@ -42,4 +41,4 @@ ivanicof includes support for Infinite Scroll in Jetpack.
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * Flexslider 2 License: GPLv2 Source: http://flexslider.woothemes.com
-* Header photography, Unsplash License: Creative Commons Zero Source: https://unsplash.com/photos/TZiHZOvxv9E
+* Header photography, Licence: Creative Commons Zero Source: https://pxhere.com/es/photo/645499

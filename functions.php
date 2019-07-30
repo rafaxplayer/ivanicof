@@ -192,7 +192,7 @@ function ivanicof_previous_post_link( $output, $format, $link, $post ) {
 add_filter('wp_generate_tag_cloud', 'ivanicof_remove_tagcloud_inline_style',10,1);
 function ivanicof_remove_tagcloud_inline_style($input){
   return preg_replace('/ style=("|\')(.*?)("|\')/','',$input);  
-  ;
+  
 }
 
 /**
@@ -238,6 +238,48 @@ function ivanicof_get_post_gallery( $gallery, $post ) {
 	return $gallery;
 }
 add_filter( 'get_post_gallery', 'ivanicof_get_post_gallery', 10, 2 );
+
+add_filter( 'comment_form_defaults', 'ivanicof_modify_fields_form' );
+
+function ivanicof_modify_fields_form( $args ){
+
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
+	$author = '<input placeholder="'.__( 'Name' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .'" size="30"' . $aria_req . ' />';
+	$email = '<div class="fields-wrap"><input placeholder="'.__( 'Email' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />';
+	$url = '<input placeholder="'.__( 'Website' ,'ivanicof').'" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" /></div>';
+	$comment = '<textarea placeholder="'. __( 'Comment', 'ivanicof' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
+	
+	
+	$args['fields']['author'] = $author;
+	$args['fields']['email'] = $email;
+	$args['fields']['url'] = $url;
+	$args['comment_field'] = $comment;
+
+	return $args;
+
+}
+
+/**
+ * Modify comments form fields order
+ */
+
+add_filter( 'comment_form_fields', 'ivanicof_modify_order_fields' );
+
+function ivanicof_modify_order_fields( $fields ){
+	//var_dump($fields);
+	$val = $fields['comment'];
+	$val2 = $fields['cookies'];
+	unset($fields['comment']);
+	unset($fields['cookies']);
+
+	$fields += array('comment' => $val );
+	$fields += array('cookies' => $val2 );
+
+	return $fields;
+}
 
 
 /**

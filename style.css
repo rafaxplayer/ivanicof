@@ -3,12 +3,12 @@ Theme Name: ivanicof
 Theme URI: 
 Author: J.Rafael simarro
 Author URI: https:///juanrafaelsimarro.com
-Description: A theme for blog in wordpress
-Version: 1.0.1
+Description: A theme for blog in WordPress.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ivanicof
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, two-columns, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1405,9 +1405,7 @@ a:active {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comment {
-	margin-bottom: 1.5rem;
-}
+
 .comments-area .comments-title,
 .author_bio_section .author_name,
 .flexslider-title {
@@ -1483,24 +1481,38 @@ a:active {
 	display: block;
 }
 
-@media (min-width: 576px) {
-	#commentform .comment-form-author,
-	#commentform .comment-form-email {
-		float: left;
-		width: 32%;
-		margin-right: 2%;
-		margin-bottom: 8px;
+#commentform input,
+#commentform textarea{
+	margin-top:15px;
+	padding:1rem;
+	
+}
+#commentform #author,
+#commentform #email,
+#commentform #url{
+	width: 100%;
+}
+
+.comment-form-cookies-consent{
+	margin-bottom:0;
+}
+
+@media screen and (min-width:37.5rem){
+	
+	#commentform #email{
+		width:48%;
+		float:left;
+	}
+	#commentform #url{
+		width:48%;
+		float:right;	
 	}
 
-	#commentform .comment-form-url {
-		float: left;
-		width: 32%;
-		margin-bottom: 24px;
-	}
-}
-#commentform .comment-form-author,
-#commentform .comment-form-email {
-	display: block;
+	#commentform .fields-wrap:after{
+		content:"";
+		display: block;
+		clear:both;
+	}	
 }
 
 /*--------------------------------------------------------------

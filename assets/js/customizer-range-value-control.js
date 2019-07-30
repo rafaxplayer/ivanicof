@@ -2,6 +2,7 @@
  * Script run inside a Customizer control sidebar
  */
 (function($) {
+    
     wp.customize.bind('ready', function() {
         rangeSlider();
     });
