@@ -8,7 +8,7 @@ Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ivanicof
-Tags: custom-background, custom-logo, custom-menu, sticky-post, featured-images, custom-header, editor-style, rtl-language-support, left-sidebar, one-column, right-sidebar, two-columns, threaded-comments, translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, two-columns, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -62,7 +62,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
 	line-height: 1.15; /* 1 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -79,7 +79,7 @@ body {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
+ * Correct the font size and margin on %60h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
@@ -376,8 +376,8 @@ textarea {
 .search-form input[type="submit"] {
 	position: absolute;
 	top: 0;
-	right: 0;
-	left: auto;
+	left: 0;
+	right: auto;
 }
 
 /* Interactive
@@ -468,7 +468,7 @@ blockquote:before {
 	color: #e098133d;
 	font-size: 3rem;
 	position: absolute;
-	left: -28px;
+	right: -28px;
 	top: -23px;
 }
 blockquote p {
@@ -557,7 +557,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -683,7 +683,7 @@ textarea {
 .search-form input[type="search"],
 .woocommerce-product-search input[type="search"],
 select {
-	padding: .6rem 0 .6rem .6rem;
+	padding: .6rem .6rem .6rem 0;
 }
 
 /*--------------------------------------------------------------
@@ -721,7 +721,7 @@ a:active {
 	padding: 1rem;
 	min-height: 100vh;
 	width: 80%;
-	left: -100%;
+	right: -100%;
 	-webkit-transition: all .6s ease-out;
 	transition: all .6s ease-out;
 	z-index: 99999999;
@@ -739,14 +739,14 @@ a:active {
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
-	padding-left: 1rem;
 	padding-right: 1rem;
+	padding-left: 1rem;
 	-webkit-transition: all 1s ease-out;
 	transition: all 1s ease-out;
 }
 
 .main-navigation.toggled {
-	left: 0;
+	right: 0;
 }
 
 .main-navigation li {
@@ -757,9 +757,8 @@ a:active {
 	transition: all .6s;
 }
 
-.main-navigation li:hover,
-.main-navigation li.focus {
-	padding-left: 1rem;
+.main-navigation li:hover {
+	padding-right: 1rem;
 }
 
 .main-navigation a {
@@ -771,7 +770,7 @@ a:active {
 #close-button {
 	color: #9c9b98;
 	position: absolute;
-	right: 1rem;
+	left: 1rem;
 	top: 1rem;
 	font-size: 1.5rem;
 	padding: 1rem;
@@ -782,7 +781,7 @@ a:active {
 #menu_button {
 	position: absolute;
 	top: 2rem;
-	right: 2rem;
+	left: 2rem;
 	color: #e09813;
 	font-size: 1.5em !important;
 	cursor: pointer;
@@ -798,12 +797,12 @@ a:active {
 	.sub-menu li a:after {
 		font-family: FontAwesome;
 		content: "\f105";
-		margin-left: 5px;
+		margin-right: 5px;
 		color: #e09813;
 		font-size: 13px;
 		font-weight: normal;
 		position: absolute;
-		left: -15px;
+		right: -15px;
 		top: 10px;
 	}
 }
@@ -817,7 +816,7 @@ a:active {
 		overflow-y: visible;
 		display: block;
 		width: 100%;
-		left: auto !important;
+		right: auto !important;
 		border-bottom: 1px solid #666666b8;
 		border-top: 1px solid #666666b8;
 		text-align: center;
@@ -829,7 +828,7 @@ a:active {
 	.main-navigation ul.menu > li.menu-item-has-children > a:after {
 		font-family: FontAwesome;
 		content: "\f107";
-		margin-left: 5px;
+		margin-right: 5px;
 		color: inherit;
 		font-size: 13px;
 		font-weight: normal;
@@ -846,12 +845,12 @@ a:active {
 	.main-navigation ul ul {
 		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		float: left;
+		float: right;
 		position: absolute;
 		top: 100%;
-		left: -999rem;
+		right: -999rem;
 		z-index: 99999;
-		text-align: left;
+		text-align: right;
 		padding-top: .5rem;
 		padding-bottom: .5rem;
 		background-color: #fff;
@@ -859,13 +858,13 @@ a:active {
 	}
 
 	.main-navigation ul ul ul {
-		left: -999em;
+		right: -999em;
 		top: 0;
 	}
 
 	.main-navigation ul ul li:hover > ul,
-	.main-navigation ul ul li.focus > ul{
-		left: 100%;
+	.main-navigation ul ul li.focus > ul {
+		right: 100%;
 	}
 
 	.main-navigation ul ul a {
@@ -874,11 +873,11 @@ a:active {
 
 	.main-navigation ul li:hover > ul,
 	.main-navigation ul li.focus > ul {
-		left: auto;
+		right: auto;
 	}
 
 	.main-navigation li {
-		float: left;
+		float: right;
 		position: relative;
 	}
 
@@ -904,15 +903,15 @@ a:active {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
+	float: right;
 	width: 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 	width: 50%;
 }
 
@@ -926,11 +925,11 @@ a:active {
 	color: rgb(128, 122, 122);
 }
 .nav-previous a:hover:after {
-	right: 0;
+	left: 0;
 	width: 100%;
 }
 .nav-next a:hover:before {
-	left: 0;
+	right: 0;
 	width: 100%;
 }
 
@@ -946,10 +945,10 @@ a:active {
 	transition: all.4s;
 }
 .nav-previous a:after {
-	right: -110px;
+	left: -110px;
 }
 .nav-next a:before {
-	left: -110px;
+	right: -110px;
 }
 
 .pagination {
@@ -1005,7 +1004,7 @@ a:active {
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -1024,10 +1023,10 @@ a:active {
 # Aligment
 --------------------------------------------------------------*/
 .alignright {
-	float: right;
+	float: left;
 }
 .alignleft {
-	float: left;
+	float: right;
 }
 .aligncenter {
 	margin: 0 auto;
@@ -1089,8 +1088,8 @@ a:active {
 
 .widget-title {
 	display: inline-block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	position: relative;
 	margin-bottom: 2rem;
 	font-size: 1.2rem;
@@ -1111,17 +1110,17 @@ a:active {
 }
 
 .widget-title:after {
-	left: 110%;
+	right: 110%;
 }
 
 .widget-title:before {
-	left: auto;
-	right: 110%;
+	right: auto;
+	left: 110%;
 }
 
 .widget ul {
 	list-style: none;
-	padding-left: 0;
+	padding-right: 0;
 	margin: 0;
 }
 .wideget_recent_comments li {
@@ -1139,12 +1138,12 @@ a:active {
 	-webkit-transition: background-color .4s;
 
 	font-size: .8rem;
-	margin-left: 5px;
+	margin-right: 5px;
 	margin-bottom: 3px;
 	display: inline-block;
 	text-transform: uppercase;
 }
-
+.widget_recent_comments a:hover,
 .widget_tag_cloud a:hover,
 .widget_categories a:hover {
 	background-color: #e09813;
@@ -1162,7 +1161,6 @@ a:active {
 	max-width: 2000px;
 	margin: 0 auto;
 }
-
 .site-main {
 	margin-top: 4.5rem;
 	padding: 2rem;
@@ -1173,7 +1171,9 @@ a:active {
 --------------------------------------------------------------*/
 .sticky {
 	display: block;
-	flex:0 0 100% !important;
+	-webkit-box-flex:0 !important;
+	    -ms-flex:0 0 100% !important;
+	        flex:0 0 100% !important;
     max-width:100% !important;
 }
 .iv-format {
@@ -1194,8 +1194,8 @@ a:active {
 }
 .iv-formats > * {
 	display: inline-block;
-	margin-left: .2rem;
 	margin-right: .2rem;
+	margin-left: .2rem;
 }
 .iv-format i {
 	line-height: 40px;
@@ -1302,8 +1302,8 @@ a:active {
 
 .comments-number {
 	position: relative;
-	padding-left: .5rem;
 	padding-right: .5rem;
+	padding-left: .5rem;
 }
 
 .comments-number a {
@@ -1324,12 +1324,12 @@ a:active {
 	opacity: .6;
 }
 .comments-number:after {
-	left: 115%;
+	right: 115%;
 }
 
 .comments-number:before {
-	left: auto;
-	right: 115%;
+	right: auto;
+	left: 115%;
 }
 .cat-links,
 .cat-links a,
@@ -1348,7 +1348,7 @@ a:active {
 	-webkit-transition: background-color .4s;
 	transition: background-color .4s;
 	font-size: .6rem;
-	margin-left: 5px;
+	margin-right: 5px;
 	text-transform: uppercase;
 }
 .tags-links a:hover,
@@ -1396,8 +1396,8 @@ a:active {
 	border: 1px solid #d8d8d8;
 	border-radius: 50%;
 	width: 60px;
-	float: left;
-	margin: 0 10px 10px 0;
+	float: right;
+	margin: 0 0 10px 10px;
 }
 
 .author_bio_section .author_links {
@@ -1426,7 +1426,7 @@ a:active {
 	height: 1px;
 	top: 50%;
 	background-color: #e09813;
-	right: -110px;
+	left: -110px;
 }
 
 .comments-area {
@@ -1441,8 +1441,8 @@ a:active {
 }
 .comment-body {
 	margin-bottom: 5rem;
-	margin-left: 1rem;
-	border-left: 3px solid #e09813;
+	margin-right: 1rem;
+	border-right: 3px solid #e09813;
 }
 
 .comment-author {
@@ -1454,7 +1454,7 @@ a:active {
 	align-items: center;
 }
 .comment-author > * {
-	margin-right: .3rem;
+	margin-left: .3rem;
 }
 
 .comment-meta {
@@ -1462,7 +1462,7 @@ a:active {
 }
 .comment-metadata {
 	position: absolute;
-	padding-left: 39px;
+	padding-right: 39px;
 	margin-top: -15px;
 	font-size: .8rem;
 }
@@ -1472,11 +1472,11 @@ a:active {
 .reply a {
 	display: inline-block;
 	margin-top: 1rem;
-	margin-left: 2rem;
+	margin-right: 2rem;
 }
 .comment-author img {
 	border-radius: 50%;
-	margin-left: -31px;
+	margin-right: -31px;
 }
 
 .bypostauthor {
@@ -1499,19 +1499,15 @@ a:active {
 	margin-bottom:0;
 }
 
-.wp-comment-cookies-consent{
-	margin-right: 3px;
-}
-
 @media screen and (min-width:37.5rem){
 	
 	#commentform #email{
 		width:48%;
-		float:left;
+		float:right;
 	}
 	#commentform #url{
 		width:48%;
-		float:right;	
+		float:left;	
 	}
 
 	#commentform .fields-wrap:after{
@@ -1570,8 +1566,8 @@ object {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -1610,7 +1606,7 @@ object {
 	width: calc(100% - 20px);
 	height: calc(100% - 30px);
 	top: 10px;
-	left: 10px;
+	right: 10px;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1764,12 +1760,12 @@ object {
 .site-branding #button-down:before {
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	right: 50%;
 	content: '';
 	width: 12px;
 	height: 12px;
-	margin: -8px 0 0 -6px;
-	border-left: 1px solid #e09813;
+	margin: -8px -6px 0 0;
+	border-right: 1px solid #e09813;
 	border-bottom: 1px solid #e09813;
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
@@ -1780,7 +1776,7 @@ object {
 .site-branding #button-down:after {
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	content: '';
 	width: 32px;
 	height: 32px;
@@ -1820,19 +1816,19 @@ object {
 	transition: all .8s;
 }
 .site-title:hover:after {
-	left: 80%;
-}
-.site-title:hover:before {
 	right: 80%;
 }
+.site-title:hover:before {
+	left: 80%;
+}
 .site-title:after {
-	right: auto;
-	left: 100%;
+	left: auto;
+	right: 100%;
 }
 
 .site-title:before {
-	left: auto;
-	right: 100%;
+	right: auto;
+	left: 100%;
 }
 
 .site-title a,
@@ -1895,13 +1891,13 @@ object {
 	margin-bottom: 1rem;
 	background-color: #8683814a;
 	bottom: 0;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
+	right: 50%;
+	-webkit-transform: translateX(50%);
+	transform: translateX(50%);
 }
 #button-up {
 	position: fixed;
-	right: 2rem;
+	left: 2rem;
 	bottom: 2rem;
 	width: 40px;
 	height: 40px;
@@ -1916,7 +1912,7 @@ object {
 }
 #button-up i {
 	position: absolute;
-	left: 13px;
+	right: 13px;
 	bottom: 26%;
 }
 
@@ -2004,8 +2000,8 @@ object {
 .flex-caption {
 	position: absolute;
 	top: 0;
-	left: 0;
 	right: 0;
+	left: 0;
 	bottom: 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2058,9 +2054,9 @@ object {
 .error404 .not-found h1 span {
 	font-size: 2rem;
 	position: absolute;
-	left: 50%;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	        transform: translateX(-50%) translateY(-50%);
+	right: 50%;
+	-webkit-transform: translateX(50%) translateY(-50%);
+	        transform: translateX(50%) translateY(-50%);
 	top: 50%;
 	background-color: white;
 	width: 100%;

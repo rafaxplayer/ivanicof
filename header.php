@@ -21,6 +21,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php 
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ivanicof' ); ?></a>
 
@@ -36,7 +42,7 @@
 						$ivanicof_description = get_bloginfo( 'description', 'display' );
 						if ( $ivanicof_description || is_customize_preview() ) :
 							?>
-							<p class="site-description"><?php echo $ivanicof_description; /* WPCS: xss ok. */ ?></p>
+							<p class="site-description"><?php echo esc_html($ivanicof_description); ?></p>
 						<?php endif; 
 						if ( is_front_page() && is_home() ) :
 							?>

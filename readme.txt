@@ -5,7 +5,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFZBWTFKLCWYQ&source=url
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.2
+Requires PHP: 7.0
+Stable tag: 1.0.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -24,7 +25,29 @@ All theme specific options are handled through the WordPress Customizer.
 
 ivanicof includes support for Infinite Scroll in Jetpack.
 
+== Screenshots ==
+
+Ivanicof theme screenshot images are licensed under [CC0].
+
+* Header photography, Licence: Creative Commons Zero Source: https://pxhere.com/es/photo/645499
+
+== Upgrade Notice ==
+
+First release.
+
 == Changelog ==
+
+= 1.0.6 - Ago 28 2019
+* Code bug Fixes
+
+= 1.0.5 - Ago 20 2019
+* Code bug Fixes
+
+= 1.0.4 - Ago 18 2019
+* Code bug Fixes
+
+= 1.0.3 - Jul 31 2019
+* Add editor styles
 
 = 1.0.2 - Jul 24 2019 =
 * Code bug Fixes
@@ -35,6 +58,7 @@ ivanicof includes support for Infinite Scroll in Jetpack.
 
 = 1.0.0 - May 12 2019 =
 * Initial release
+
 
 == Licences & credits==
 

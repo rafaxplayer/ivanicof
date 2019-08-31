@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ivanicof\n"
-"POT-Creation-Date: 2019-07-20 09:41+0200\n"
+"POT-Creation-Date: 2019-08-28 23:45+0200\n"
 "PO-Revision-Date: 2019-07-20 09:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -66,19 +66,35 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:50
+#: functions.php:53
 msgid "Primary"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:157
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:159
 msgid "Add widgets here."
 msgstr ""
 
-#: header.php:25
+#: functions.php:278
+msgid "Name"
+msgstr ""
+
+#: functions.php:279
+msgid "Email"
+msgstr ""
+
+#: functions.php:280
+msgid "Website"
+msgstr ""
+
+#: functions.php:281
+msgid "Comment"
+msgstr ""
+
+#: header.php:31
 msgid "Skip to content"
 msgstr ""
 
@@ -194,47 +210,59 @@ msgstr ""
 msgid "Content Width percentage"
 msgstr ""
 
-#: inc/customizer/customizer.php:351
+#: inc/customizer/customizer.php:355
+msgid "Blog columns"
+msgstr ""
+
+#: inc/customizer/customizer.php:362
+msgid "One Column (Default)"
+msgstr ""
+
+#: inc/customizer/customizer.php:366
+msgid "Two Columns"
+msgstr ""
+
+#: inc/customizer/customizer.php:376
 msgid "Social networks info"
 msgstr ""
 
-#: inc/customizer/customizer.php:353
+#: inc/customizer/customizer.php:378
 msgid "Set links of social networks"
 msgstr ""
 
-#: inc/customizer/customizer.php:365
+#: inc/customizer/customizer.php:390
 msgid "Instagram Url"
 msgstr ""
 
-#: inc/customizer/customizer.php:379
+#: inc/customizer/customizer.php:404
 msgid "Pinterest Url"
 msgstr ""
 
-#: inc/customizer/customizer.php:392
+#: inc/customizer/customizer.php:417
 msgid "Facebook Url"
 msgstr ""
 
-#: inc/customizer/customizer.php:403
+#: inc/customizer/customizer.php:428
 msgid "Twitter Url"
 msgstr ""
 
-#: inc/customizer/customizer.php:414
+#: inc/customizer/customizer.php:439
 msgid "Linkedin Url"
 msgstr ""
 
-#: inc/customizer/customizer.php:424
+#: inc/customizer/customizer.php:449
 msgid "Footer Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:426
+#: inc/customizer/customizer.php:451
 msgid "Set Footer options"
 msgstr ""
 
-#: inc/customizer/customizer.php:438
+#: inc/customizer/customizer.php:463
 msgid "Show/hide footer social icons"
 msgstr ""
 
-#: inc/customizer/customizer.php:451
+#: inc/customizer/customizer.php:476
 msgid "Text info for footer"
 msgstr ""
 
@@ -278,7 +306,7 @@ msgstr ""
 
 #: template-parts/content-audio.php:32 template-parts/content-gallery.php:32
 #: template-parts/content-image.php:33 template-parts/content-quote.php:34
-#: template-parts/content-video.php:32 template-parts/content.php:32
+#: template-parts/content-video.php:32 template-parts/content.php:33
 msgid " Edit"
 msgstr ""
 
@@ -319,15 +347,19 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
-#: widgets/about-widget/class-about-widget.php:136
+#: widgets/about-widget/class-about-widget.php:72
+msgid "About Me"
+msgstr ""
+
+#: widgets/about-widget/class-about-widget.php:144
 msgid "Title:"
 msgstr ""
 
-#: widgets/about-widget/class-about-widget.php:149
+#: widgets/about-widget/class-about-widget.php:157
 msgid "Name:"
 msgstr ""
 
-#: widgets/about-widget/class-about-widget.php:154
+#: widgets/about-widget/class-about-widget.php:162
 msgid "Text:"
 msgstr ""
 
@@ -446,7 +478,7 @@ msgid "ivanicof"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "A theme for blog in wordpress"
+msgid "A theme for blog in WordPress."
 msgstr ""
 
 #. Author of the plugin/theme

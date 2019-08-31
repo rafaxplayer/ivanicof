@@ -4,7 +4,6 @@
  * javascript code for elements
  * 
  */
-
 jQuery(document).ready(function ($) {
 
     var $body = $('body'),
@@ -50,7 +49,6 @@ jQuery(document).ready(function ($) {
     }
 
     displaybuttonUp();
-
     
     $('.flexslider').flexslider({
         animation: "slide",
@@ -63,7 +61,26 @@ jQuery(document).ready(function ($) {
         itemMargin: 5
     });
 
-    
+    $('#site-navigation a').focus(toggleFocus).blur( toggleFocus); 
+
+    function toggleFocus() {
+		var self = this;
+
+		// Move up through the ancestors of the current link until we hit .nav-menu.
+		while ( -1 === self.className.indexOf( 'main-navigation' ) ) {
+
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+					self.className = self.className.replace( ' focus', '' );
+				} else {
+					self.className += ' focus';
+				}
+			}
+
+			self = self.parentElement;
+		}
+	}
     
 
 } );

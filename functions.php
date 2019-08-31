@@ -7,6 +7,9 @@
  * @package ivanicof
  */
 
+define( 'IVANICOF_VERSION', '1.0.5' );
+
+
 if ( ! function_exists( 'ivanicof_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -102,6 +105,31 @@ if ( ! function_exists( 'ivanicof_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'ivanicof_setup' );
+
+/**
+ * Enable support for custom editor styles if using the classic editor.
+ *
+ * @link  https://developer.wordpress.org/reference/functions/add_editor_style/
+ * @since 1.0.0
+ */
+function ivanicof_classic_editor_styles() {
+
+	// Return if the block editor is not found.
+	if ( ! function_exists( 'register_block_type' ) ) {
+
+		return;
+
+	}
+
+	// Add editor styles for the classic editor.
+	if ( ! get_current_screen()->is_block_editor() ) {
+
+		add_editor_style( 'editor-style.css' );
+
+	}
+
+}
+add_action( 'admin_print_styles', 'ivanicof_classic_editor_styles', 10, 0 );
 
 
 /**
@@ -247,10 +275,10 @@ function ivanicof_modify_fields_form( $args ){
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
-	$author = '<input placeholder="'.__( 'Name' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .'" size="30"' . $aria_req . ' />';
-	$email = '<div class="fields-wrap"><input placeholder="'.__( 'Email' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />';
-	$url = '<input placeholder="'.__( 'Website' ,'ivanicof').'" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" /></div>';
-	$comment = '<textarea placeholder="'. __( 'Comment', 'ivanicof' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
+	$author = '<input placeholder="'.esc_html__( 'Name' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .'" size="30"' . $aria_req . ' />';
+	$email = '<div class="fields-wrap"><input placeholder="'.esc_html__( 'Email' ,'ivanicof') . ( $req ? ' *' : '' ).'" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />';
+	$url = '<input placeholder="'.esc_html__( 'Website' ,'ivanicof').'" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" /></div>';
+	$comment = '<textarea placeholder="'. esc_html__( 'Comment', 'ivanicof' ).'" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>';
 	
 	
 	$args['fields']['author'] = $author;

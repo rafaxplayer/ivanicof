@@ -25,9 +25,9 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 
 		parent::__construct(
 			$this->widget_slug,
-			__( 'Ivanicof Instagram Widget', 'ivanicof' ),
+			esc_html__( 'Ivanicof Instagram Widget', 'ivanicof' ),
 			array(
-				'description' => __( 'Easily display Instagram photos with this widget.', 'ivanicof' )
+				'description' => esc_html__( 'Easily display Instagram photos with this widget.', 'ivanicof' )
 			)
 		);
 
@@ -39,7 +39,7 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 			'photo_space' => 1,
 			'container_size' => 500,
 			'transient_time' => DAY_IN_SECONDS,
-			'link_text' => __( 'Follow', 'ivanicof' ),
+			'link_text' => esc_html__( 'Follow', 'ivanicof' ),
 		);
 
 		// Allow themes or plugins to modify default parameters

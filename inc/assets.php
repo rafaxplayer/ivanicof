@@ -6,6 +6,7 @@
  * @package ivanicof
  */
 
+
  /**
  * Enqueue scripts and styles.
  */
@@ -15,7 +16,9 @@ function checkcdn_is_load($cdn,$arraycdns){
 }
 function ivanicof_scripts() {
 
-	wp_enqueue_style( 'ivanicof-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ivanicof-style', get_stylesheet_uri() ,false. IVANICOF_VERSION);
+
+	wp_style_add_data( 'ivanicof-style', 'rtl', 'replace' );
 
 	wp_enqueue_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'assets/css/font-awesome.min.css' , array(), '4.7', 'all' );
 	

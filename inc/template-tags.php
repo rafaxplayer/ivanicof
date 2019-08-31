@@ -15,7 +15,7 @@ if(! function_exists( 'ivanicoft_entry_categories')):
 			$categories_list = get_the_category_list( esc_html__( ' * ', 'ivanicof' ) );
 			if ( $categories_list ) {
 				
-				echo '<span class="cat-links">' . $categories_list  . '</span>';
+				echo '<span class="cat-links">' . $categories_list . '</span>';
 			}
 
 			
@@ -60,7 +60,7 @@ if ( ! function_exists( 'ivanicof_posted_on' ) ) :
 		$posted_on = ' | <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on. '</span>';
 
 	}
 endif;
@@ -76,7 +76,7 @@ if ( ! function_exists( 'ivanicof_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' . $byline . '</span>'; 
 
 	}
 endif;
@@ -90,7 +90,7 @@ if ( ! function_exists( 'ivanicof_entry_comments' ) ) :
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<footer class="entry-footer">';
 			$post_link = esc_url(get_permalink());
-			echo '<span class="comments-number"> <a href="'.$post_link.'"><i class="fa fa-comment-o"></i> ';
+			echo '<span class="comments-number"> <a href="' . esc_url($post_link) . '"><i class="fa fa-comment-o"></i> ';
 			comments_number( '0', '1', '%' );
 			echo '</a></span></footer>';
 		}
@@ -147,22 +147,22 @@ if ( ! function_exists( 'ivanicof_post_format' ) ) :
 
 		switch($format){
 			case "audio":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-volume-off" aria-hidden="true"></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)) . '" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-volume-off" aria-hidden="true"></i></a>';
 			break;
 			case "video":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-video-camera" aria-hidden="true"></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)) . '" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-video-camera" aria-hidden="true"></i></a>';
 			break;
 			case "quote":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-quote-left" aria-hidden="true"></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)) . '" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-quote-left" aria-hidden="true"></i></a>';
 			break;
 			case "gallery":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-th" aria-hidden="true"></i></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)) . '" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-th" aria-hidden="true"></i></i></a>';
 			break;
 			case "image":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-picture-o" aria-hidden="true"></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)) . '" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-picture-o" aria-hidden="true"></i></a>';
 			break;
 			case "link":
-				echo '<a href="'.get_post_format_link($format).'" class="iv-format" title="'.esc_html($format).'"><i class="fa fa-link" aria-hidden="true"></i></i></a>';
+				echo '<a href="' . esc_url(get_post_format_link($format)).'" class="iv-format" title="' . esc_html($format) . '"><i class="fa fa-link" aria-hidden="true"></i></i></a>';
 			break;
 			default:
 			break;
@@ -229,7 +229,7 @@ if ( ! function_exists( 'ivanicof_author_bio' ) ) :
 				// Pass all this info to post content  
 				$author_info = '<div class="author_bio_section" >' . $author_details . '</div>';
 		}
-			echo $author_info;
+			echo wp_kses_post($author_info);
 	}
 		 
 	

@@ -14,7 +14,7 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 $args['widget_id'] = $this->id;
             }
 
-            $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts' ,'ivanicof');
+            $title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts' ,'ivanicof');
 
             /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
             $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );

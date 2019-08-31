@@ -58,6 +58,8 @@ add_filter ( 'wp_prepare_attachment_for_js',  'wpse_110060_image_sizes_js' , 10,
 
 class Ivanicof_About_widget extends WP_Widget {
 
+    protected $defaults;
+
     public function __construct() {
 
         $widget_ops = array(
@@ -65,14 +67,20 @@ class Ivanicof_About_widget extends WP_Widget {
             'description' => 'About me information',
             );
             parent::__construct( 'ivanicof_About_widget', 'About me', $widget_ops );
-            
+
+            $this->defaults = array(
+                'title' => __('About Me','ivanicof'),
+                'image_uri' => '',
+                'name' => '',
+                'text' => ''
+            );
     }
            
     // output the widget content on the front-end
     public function widget( $args, $instance ) {
 
         extract( $args );
-
+        $instance = wp_parse_args( (array) $instance, $this->defaults );
         // these are the widget options
         $title = apply_filters('widget_title', $instance['title']);
         $image = $instance['image_uri'];
@@ -133,25 +141,25 @@ class Ivanicof_About_widget extends WP_Widget {
         ?>
      
         <p>
-            <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:','ivanicof' ); ?></label>
+            <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php esc_html_e( 'Title:','ivanicof' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
             <label for="<?php echo $this->get_field_id( 'image_uri' ); ?>">Image</label>
             <img class="<?php echo $this->id ?>_img" src="<?php echo $image; ?>" style="margin:0;padding:0;max-width:100%;display:block"/>
-            <input type="text" class="widefat <?php echo $this->id ?>_url" name="<?php echo $this->get_field_name( 'image_uri' ); ?>" value="<?php echo $instance['image_uri']; ?>" style="margin-top:5px;" />
+            <input type="text" class="widefat <?php echo $this->id ?>_url" name="<?php echo $this->get_field_name( 'image_uri' ); ?>" value="<?php echo $image; ?>" style="margin-top:5px;" />
             <input type="button" id="<?php echo $this->id ?>" class="button button-primary js_custom_upload_media" value="Upload Image" style="margin-top:5px;" />
             
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_name( 'name' ); ?>"><?php _e( 'Name:','ivanicof' ); ?></label>
+            <label for="<?php echo $this->get_field_name( 'name' ); ?>"><?php esc_html_e( 'Name:','ivanicof' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" type="text" value="<?php echo esc_attr( $name ); ?>" />
         </p>
      
         <p>
-            <label for="<?php echo $this->get_field_name( 'text' ); ?>"><?php _e( 'Text:','ivanicof' ); ?></label>
+            <label for="<?php echo $this->get_field_name( 'text' ); ?>"><?php esc_html_e( 'Text:','ivanicof' ); ?></label>
             <textarea class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>" type="text" ><?php echo esc_attr( $text ); ?></textarea>
         </p>
      

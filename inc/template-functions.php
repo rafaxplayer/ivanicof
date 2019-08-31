@@ -142,7 +142,7 @@ if ( ! function_exists( 'ivanicof_gallery_to_slider' ) ) :
 			<ul class="slides">';
 			foreach ($src as $key => $value) {
 				echo '<li>
-				<img src="'.$value.'" />
+				<img src="'.esc_url($value).'" />
 			  </li>';
 			}
 			echo '</ul></div>';

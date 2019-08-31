@@ -29,7 +29,7 @@
 				<?php
 				ivanicof_posted_by();
                 ivanicof_posted_on();
-                edit_post_link( __( ' Edit', 'ivanicof' ), '<span class="edit-link">', '</span>' ); ?>
+                edit_post_link( esc_html__( ' Edit', 'ivanicof' ), '<span class="edit-link">', '</span>' ); ?>
 				
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -53,7 +53,7 @@
 			the_content( );
 			ivanicof_entry_tags();
 		}else{
-			echo '<div class="read_more"><a href="'.esc_url(get_permalink()).'">'.__('Read More','ivanicof').'</a><i class="fa fa-angle-double-right"></i></div>';
+			echo '<div class="read_more"><a href="'.esc_url(get_permalink()).'">'.esc_html__('Read More','ivanicof').'</a><i class="fa fa-angle-double-right"></i></div>';
 		}
 
 		wp_link_pages();

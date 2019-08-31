@@ -29,7 +29,7 @@
 				<?php
 				ivanicof_posted_by();
 				ivanicof_posted_on();
-				edit_post_link( __( ' Edit', 'ivanicof' ), '<span class="edit-link">', '</span>' ); ?>
+				edit_post_link( esc_html__( ' Edit', 'ivanicof' ), '<span class="edit-link">', '</span>' ); ?>
 				
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

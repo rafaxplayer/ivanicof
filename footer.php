@@ -29,7 +29,7 @@
 			<?php endif; ?>
 				<div><?php
 				/* translators: %s: copirigth, date. */
-				printf( esc_html__( '&copy; %s', 'ivanicof' ), date('Y') );?>
+				printf( esc_html__( '&copy; %s', 'ivanicof' ), esc_html(date('Y')) );?>
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
