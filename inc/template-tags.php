@@ -15,7 +15,7 @@ if(! function_exists( 'ivanicoft_entry_categories')):
 			$categories_list = get_the_category_list( esc_html__( ' * ', 'ivanicof' ) );
 			if ( $categories_list ) {
 				
-				echo '<span class="cat-links">' . $categories_list . '</span>';
+				echo '<span class="cat-links">' . wp_kses_post($categories_list) . '</span>';
 			}
 
 			
@@ -33,7 +33,7 @@ if(! function_exists( 'ivanicoft_entry_tags')):
 			$tags_list = get_the_tag_list( );
 			if ( $tags_list ) {
 				
-				echo ' <span class="tags-links">' . $tags_list . '</span>';
+				echo ' <span class="tags-links">' . wp_kses_post($tags_list) . '</span>';
 			}
 		}
 	}
@@ -60,7 +60,7 @@ if ( ! function_exists( 'ivanicof_posted_on' ) ) :
 		$posted_on = ' | <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		
 
-		echo '<span class="posted-on">' . $posted_on. '</span>';
+		echo '<span class="posted-on">' . wp_kses_post($posted_on). '</span>';
 
 	}
 endif;
@@ -76,7 +76,7 @@ if ( ! function_exists( 'ivanicof_posted_by' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; 
+		echo '<span class="byline"> ' . wp_kses_post($byline) . '</span>'; 
 
 	}
 endif;

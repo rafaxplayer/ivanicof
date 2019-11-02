@@ -66,9 +66,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 				</div><!-- .site-branding -->
 			</div>
 		</div>
-		<i id="menu_button" class="menu-toggle fa fa-bars" ></i>
+		<a id="menu_button" class="menu-toggle fa fa-bars" href="?"></a>
 		<nav id="site-navigation" class="main-navigation">
-			<i id="close-button" class="fa fa-times" aria-hidden="true"></i> 
+		
+			<a id="close-button" href="?" class="fa fa-times" aria-hidden="true"></a> 
 			
 			<?php
 			wp_nav_menu( array(

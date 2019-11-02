@@ -29,7 +29,7 @@
  // Run the loop and output data for the results
  if ( $custom_query->have_posts() ) : 
 
-    echo '<div class="slider-wrap"><h2 class="flexslider-title">'.__('Related Posts','ivanicof').'</h2>';?>
+    echo '<div class="slider-wrap"><h2 class="flexslider-title">'.esc_html__('Related Posts','ivanicof').'</h2>';?>
  
  <div class="flexslider ">
     <ul class="slides">
@@ -40,13 +40,13 @@
         <?php 
             if(!has_post_thumbnail() || '' == get_the_post_thumbnail()):?>
 
-                <img src="<?php echo trailingslashit( get_template_directory_uri() ).'assets/images/300.png';?>" alt="">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/assets/images/300.png');?>" alt="">
                 
         <?php else:
                 the_post_thumbnail('thumbnail'); 
             
             endif; ?>
-        <a href="<?php echo get_the_permalink(); ?>" class="flex-caption"><?php the_title('<h3>','</h3>'); ?></a>
+        <a href="<?php echo esc_url(get_the_permalink()); ?>" class="flex-caption"><?php the_title('<h3>','</h3>'); ?></a>
        
      </li>
     <?php endwhile; 

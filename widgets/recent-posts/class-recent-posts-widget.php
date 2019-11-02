@@ -44,9 +44,9 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 
             if ($r->have_posts()) :
             ?>
-            <?php echo $args['before_widget']; ?>
+            <?php echo wp_kses_post($args['before_widget']); ?>
             <?php if ( $title ) {
-                echo $args['before_title'] . esc_html($title) . $args['after_title'];
+                echo wp_kses_post($args['before_title']) . esc_html($title) . wp_kses_post($args['after_title']);
             } ?>
             <ul>
             <?php while ( $r->have_posts() ) : $r->the_post(); ?>
@@ -65,7 +65,7 @@ Class Ivanicof_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 </li>
             <?php endwhile; ?>
             </ul>
-            <?php echo $args['after_widget']; ?>
+            <?php echo wp_kses_post($args['after_widget']); ?>
             <?php
             // Reset the global $the_post as this query will have stomped on it
             wp_reset_postdata();

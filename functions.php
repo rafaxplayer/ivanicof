@@ -7,7 +7,7 @@
  * @package ivanicof
  */
 
-define( 'IVANICOF_VERSION', '1.0.5' );
+define( 'IVANICOF_VERSION', '1.0.8' );
 
 
 if ( ! function_exists( 'ivanicof_setup' ) ) :
@@ -166,17 +166,6 @@ function ivanicof_widgets_init() {
 add_action( 'widgets_init', 'ivanicof_widgets_init' );
 
 /**
- * Filter the excerpt "read more" string.
- *
- * @param string $more "Read more" excerpt string.
- * @return string (Maybe) modified "read more" excerpt string.
- */
-function ivanicof_excerpt_more( $more ) {
-    return '...';
-}
-add_filter( 'excerpt_more', 'ivanicof_excerpt_more' );
-
-/**
  * Filter post links.
  *
  * split titles
@@ -297,7 +286,7 @@ function ivanicof_modify_fields_form( $args ){
 add_filter( 'comment_form_fields', 'ivanicof_modify_order_fields' );
 
 function ivanicof_modify_order_fields( $fields ){
-	//var_dump($fields);
+	
 	$val = $fields['comment'];
 	$val2 = $fields['cookies'];
 	unset($fields['comment']);

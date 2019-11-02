@@ -6,11 +6,14 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.5
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 1.0.6
+Stable tag: 1.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
 A starter theme called ivanicof.
+
+ivanicof WordPress Theme, Copyright 2019 J.Rafael Simarro
+ivanicof se distribuye bajo los términos de la GNU GPL
 
 == Installation ==
 
@@ -36,6 +39,15 @@ Ivanicof theme screenshot images are licensed under [CC0].
 First release.
 
 == Changelog ==
+
+= 1.0.9 - Nov 02 2019
+* Code bug Fixes
+
+= 1.0.8 - Oct 02 2019
+* Code bug Fixes
+
+= 1.0.7 - Sep 10 2019
+* Code bug Fixes
 
 = 1.0.6 - Ago 28 2019
 * Code bug Fixes

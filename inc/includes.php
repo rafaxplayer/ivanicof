@@ -55,11 +55,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/assets.php';
 
 /**
- * widget about.
- */
-require get_template_directory() . '/widgets/about-widget/class-about-widget.php';
-
-/**
  * widget Recent posts.
  */
 require get_template_directory() . '/widgets/recent-posts/class-recent-posts-widget.php';

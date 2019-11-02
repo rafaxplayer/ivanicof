@@ -68,17 +68,17 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		echo $before_widget;
+		echo wp_kses_post($before_widget);
 
 		if ( ! empty( $title ) ) {
-			echo $before_title . $title . $after_title;
+			echo wp_kses_post($before_title) . esc_html($title) . wp_kses_post($after_title);
 		}
 
 		$photos = $this->get_photos( $instance['username_hashtag'], $instance['transient_time'] );
 
 		if ( is_wp_error( $photos ) ) {
-			echo $photos->get_error_message();
-			echo $after_widget;
+			echo esc_html($photos->get_error_message());
+			echo wp_kses_post($after_widget);
 			return;
 		}
 
@@ -92,7 +92,7 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 		$widget_content = ob_get_clean();
 		
 		echo $widget_content;
-		echo $after_widget;
+		echo wp_kses_post($after_widget);
 
 	}
 

@@ -1,8 +1,7 @@
 <?php
 /**
  * Assets
- *
- *
+ * 
  * @package ivanicof
  */
 
@@ -11,9 +10,6 @@
  * Enqueue scripts and styles.
  */
 
-function checkcdn_is_load($cdn,$arraycdns){
-	return in_array( $cdn, $arraycdns );
-}
 function ivanicof_scripts() {
 
 	wp_enqueue_style( 'ivanicof-style', get_stylesheet_uri() ,false. IVANICOF_VERSION);
@@ -34,7 +30,7 @@ function ivanicof_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	$site_title_font= esc_html(get_theme_mod('ivanicof_typography_site_title',ivanicof_setting_default('ivanicof_typography_site_title')));
+	$site_title_font = esc_html(get_theme_mod('ivanicof_typography_site_title',ivanicof_setting_default('ivanicof_typography_site_title')));
 	$titles_font = esc_html(get_theme_mod('ivanicof_typography_titles',ivanicof_setting_default('ivanicof_typography_titles')));
 	$texts_font = esc_html(get_theme_mod('ivanicof_typography_texts',ivanicof_setting_default('ivanicof_typography_texts')));
 
