@@ -40,6 +40,9 @@ First release.
 
 == Changelog ==
 
+= 1.0.11 - JAN 13 2010
+* Add social network Tumblr icon
+
 = 1.0.10 - Dec 09 2019
 * Code bug Fixes
 

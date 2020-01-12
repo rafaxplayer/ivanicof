@@ -7,7 +7,7 @@
  * @package ivanicof
  */
 
-define( 'IVANICOF_VERSION', '1.0.10' );
+define( 'IVANICOF_VERSION', '1.0.11' );
 
 
 if ( ! function_exists( 'ivanicof_setup' ) ) :

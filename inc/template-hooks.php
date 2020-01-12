@@ -17,6 +17,7 @@ if(!function_exists('ivanicof_social_links')):
                     $pinterest = get_theme_mod('ivanicof_pinterest');
                     $linkedin = get_theme_mod('ivanicof_linkedin');
                     $youtube = get_theme_mod('ivanicof_youtube');
+                    $tumblr = get_theme_mod('ivanicof_tumblr');
 
                 if(!empty($facebook)):?>
                     <a href="<?php echo esc_url($facebook); ?>"><i class="fa fa-facebook"></i></a>
@@ -35,6 +36,9 @@ if(!function_exists('ivanicof_social_links')):
                 <?php endif;
                 if(!empty($youtube)):?>
                     <a href="<?php echo esc_url($youtube); ?>"><i class="fa fa-youtube"></i></a>
+                <?php endif;
+                if(!empty($tumblr)):?>
+                    <a href="<?php echo esc_url($tumblr); ?>"><i class="fa fa-tumblr"></i></a>
                 <?php endif;?>
             </div>
         <?php

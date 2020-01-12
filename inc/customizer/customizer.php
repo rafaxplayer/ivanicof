@@ -442,6 +442,17 @@ function ivanicof_customize_register( $wp_customize ) {
 
 	));
 
+	/* tumblr*/
+	$wp_customize->add_setting( 'ivanicof_tumblr', array( 
+		'sanitize_callback' => 'esc_url_raw') );
+
+	$wp_customize->add_control( 'ivanicof_tumblr_control', array(
+	'label'      => esc_html__( 'tumblr Url', 'ivanicof' ),
+	'section'    => 'ivanicof_social_section',
+	'settings'    => 'ivanicof_tumblr',
+
+	));
+
 	/* End social section */
 
 	/* Footer options */
