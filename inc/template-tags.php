@@ -6,6 +6,7 @@
  *
  * @package ivanicof
  */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 if(! function_exists( 'ivanicoft_entry_categories')):
 	function ivanicof_entry_categories(){
 

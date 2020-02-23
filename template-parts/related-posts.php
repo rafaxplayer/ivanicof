@@ -5,7 +5,7 @@
  *
  * @package ivanicof
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
  // Get a list of the current post's categories
  global $post;
  $categories = get_the_category( $post->ID );

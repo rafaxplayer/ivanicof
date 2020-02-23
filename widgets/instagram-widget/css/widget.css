@@ -5,11 +5,14 @@
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	align-content: stretch;
+	margin: 0 auto;
 	
 }
 
 .ivanicof-instagram-widget .insta-item{
 	position: relative;
+	max-height: 120px;
+    overflow: hidden;
 }
 
 .ivanicof-instagram-widget a {

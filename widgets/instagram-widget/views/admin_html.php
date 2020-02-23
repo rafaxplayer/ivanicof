@@ -37,6 +37,12 @@
 	<small class="howto"><?php esc_html_e( 'Specify a spacing between your photos', 'ivanicof' ); ?></small>
 </p>
 
+<p>
+	<label for="<?php echo esc_html($this->get_field_id( 'photo_max_height' )); ?>"><?php esc_html_e( 'Photo max height', 'ivanicof' ); ?>:</label><br/>
+	<input class="small-text" type="text" value="<?php echo absint( $instance['photo_max_height'] ); ?>" id="<?php echo esc_attr($this->get_field_id( 'photo_max_height' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'photo_max_height' )); ?>" /> px
+	<small class="howto"><?php esc_html_e( 'Specify a maxim height size in your photos', 'ivanicof' ); ?></small>
+</p>
+
 
 <p>
 	<label for="<?php echo esc_html($this->get_field_id( 'container_size' )); ?>"><?php esc_html_e( 'Widget container size', 'ivanicof' ); ?>:</label><br/>

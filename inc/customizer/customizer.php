@@ -4,7 +4,7 @@
  *
  * @package ivanicof
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -123,6 +123,20 @@ function ivanicof_customize_register( $wp_customize ) {
 			'settings'	  => 'ivanicof_subtitle_color',
 		)
 	) );
+
+	//Links and accent color
+	$wp_customize->add_setting( 'ivanicof_accent_color' , array(
+		'default'           => ivanicof_setting_default('ivanicof_accent_color'),
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_accent_color_control',array(
+			'label' 	  => esc_html__( 'Set colors for links and buttons','ivanicof' ),
+			'section' 	  => 'colors',
+			'settings'	  => 'ivanicof_accent_color',
+		)
+	) );
+
 	//navigation menu
 	$wp_customize->add_setting( 'ivanicof_main_menu_color_desktop' , array(
 		'default'           => ivanicof_setting_default('ivanicof_main_menu_color_desktop'),
@@ -136,7 +150,19 @@ function ivanicof_customize_register( $wp_customize ) {
 		)
 	) );
 
-	//navigation menu
+	$wp_customize->add_setting( 'ivanicof_main_menu_text_color_desktop' , array(
+		'default'           => ivanicof_setting_default('ivanicof_main_menu_text_color_desktop'),
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_text_color_desktop_control',array(
+			'label' 	  => esc_html__( 'Text color for main menu on big devices','ivanicof' ),
+			'section' 	  => 'colors',
+			'settings'	  => 'ivanicof_main_menu_text_color_desktop',
+		)
+	) );
+
+	//navigation menu mobile
 	$wp_customize->add_setting( 'ivanicof_main_menu_color_mobile' , array(
 		'default'           => ivanicof_setting_default('ivanicof_main_menu_color_mobile'),
 		'sanitize_callback' => 'sanitize_hex_color',
@@ -146,6 +172,18 @@ function ivanicof_customize_register( $wp_customize ) {
 			'label' 	  => esc_html__( 'Background color for main menu on mobile devices','ivanicof' ),
 			'section' 	  => 'colors',
 			'settings'	  => 'ivanicof_main_menu_color_mobile',
+		)
+	) );
+
+	$wp_customize->add_setting( 'ivanicof_main_menu_text_color_mobile' , array(
+		'default'           => ivanicof_setting_default('ivanicof_main_menu_text_color_mobile'),
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'ivanicof_main_menu_text_color_mobile_control',array(
+			'label' 	  => esc_html__( 'Text color for main menu on mobile devices','ivanicof' ),
+			'section' 	  => 'colors',
+			'settings'	  => 'ivanicof_main_menu_text_color_mobile',
 		)
 	) );
 	

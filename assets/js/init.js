@@ -28,7 +28,8 @@ jQuery(document).ready(function($) {
         $button.css({ 'top': $margin_height + 'px' })
     }
 
-    $button.add($buttonClose).on('click', function() { $menu.toggleClass('toggled'); });
+    $button.on('click', function() { $menu.addClass('toggled'); });
+    $buttonClose.on('click', function() { $menu.removeClass('toggled'); });
     $button.on('focus', function() { $menu.toggleClass('toggled'); });
 
     function displaybuttonUp() {

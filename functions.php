@@ -7,7 +7,10 @@
  * @package ivanicof
  */
 
-define( 'IVANICOF_VERSION', '1.0.11' );
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+$ivanicof_theme = wp_get_theme();
+
+define( 'IVANICOF_VERSION', $ivanicof_theme->get('Version') );
 
 
 if ( ! function_exists( 'ivanicof_setup' ) ) :

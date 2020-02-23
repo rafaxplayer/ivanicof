@@ -37,6 +37,7 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 			'photos_number' => 9,
 			'columns' => 3,
 			'photo_space' => 1,
+			'photo_max_height' => 120,
 			'container_size' => 500,
 			'transient_time' => DAY_IN_SECONDS,
 			'link_text' => esc_html__( 'Follow', 'ivanicof' ),
@@ -111,6 +112,7 @@ class ivanicof_Instagram_Widget extends WP_Widget {
 		$instance['photos_number'] = absint( $new_instance['photos_number'] );
 		$instance['columns'] = absint( $new_instance['columns'] );
 		$instance['photo_space'] = absint( $new_instance['photo_space'] );
+		$instance['photo_max_height'] = absint( $new_instance['photo_max_height'] );
 		$instance['container_size'] = absint( $new_instance['container_size'] );
 		$instance['transient_time'] = absint( $new_instance['transient_time'] );
 		$instance['link_text'] = strip_tags( $new_instance['link_text'] );

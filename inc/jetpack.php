@@ -6,7 +6,7 @@
  *
  * @package ivanicof
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Jetpack setup function.
  *

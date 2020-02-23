@@ -38,11 +38,18 @@ function ivanicof_custom_styles() {
     $blog_columns = esc_html(get_theme_mod('ivanicof_blog_columns',ivanicof_setting_default('ivanicof_blog_columns')));
     
     //Colors
+
+    $link_accent_colors = get_theme_mod('ivanicof_accent_color',ivanicof_setting_default('ivanicof_accent_color'));
+    
     $subtitle_color = get_theme_mod('ivanicof_subtitle_color',ivanicof_setting_default('ivanicof_subtitle_color'));
     
     $main_menu_color_desktop = get_theme_mod('ivanicof_main_menu_color_desktop',ivanicof_setting_default('ivanicof_main_menu_color_desktop'));
     
+    $main_menu_text_color_desktop = get_theme_mod('ivanicof_main_menu_text_color_desktop',ivanicof_setting_default('ivanicof_main_menu_text_color_desktop'));
+    
     $main_menu_color_mobile = get_theme_mod('ivanicof_main_menu_color_mobile',ivanicof_setting_default('ivanicof_main_menu_color_mobile'));
+
+    $main_menu_text_color_mobile = get_theme_mod('ivanicof_main_menu_text_color_mobile',ivanicof_setting_default('ivanicof_main_menu_text_color_mobile'));
     
     $custom ="";
 
@@ -90,10 +97,40 @@ function ivanicof_custom_styles() {
         }\n";
     }
 
+    if($link_accent_colors){
+        $custom .= "a{ 
+            color: $link_accent_colors;
+        }
+        .site-branding #button-down{
+            color: $link_accent_colors;
+            border: 1px solid $link_accent_colors;
+        }
+        .site-branding #button-down:before{
+            border-left: 1px solid $link_accent_colors;
+            border-bottom: 1px solid $link_accent_colors;
+        }
+        button, input[type='button'], input[type='reset'], input[type='submit']{
+            background-color: $link_accent_colors;
+        }
+        #button-up{
+            border: 1px solid $link_accent_colors;
+            color: $link_accent_colors;
+        }\n";
+    }
+
     if($main_menu_color_desktop){
         $custom .= "@media screen and (min-width: 37.5em){
                         .main-navigation{ 
-                            background-color:$main_menu_color_desktop; 
+                            background-color:$main_menu_color_desktop !important; 
+                        }
+                       
+                    }\n";
+    }
+
+    if($main_menu_text_color_desktop){
+        $custom .= "@media screen and (min-width: 37.5em){
+                        .main-navigation a{
+                            color:$main_menu_text_color_desktop !important;
                         }
                     }\n";
     }
@@ -101,7 +138,17 @@ function ivanicof_custom_styles() {
     if($main_menu_color_mobile){
         $custom .= "@media screen and (max-width: 37.5em){
                         .main-navigation{ 
-                            background-color:$main_menu_color_mobile;
+                            background-color:$main_menu_color_mobile !important;
+                            
+                        }
+                        
+                    }\n";
+    }
+
+    if($main_menu_text_color_mobile){
+        $custom .= "@media screen and (max-width: 37.5em){
+                        .main-navigation a{
+                            color:$main_menu_text_color_mobile !important;
                         }
                     }\n";
     }

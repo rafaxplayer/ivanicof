@@ -5,7 +5,7 @@
  *
  * @package ivanicof
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
  * Implement the Custom Header feature.
  */

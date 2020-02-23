@@ -6,7 +6,7 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.5
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 1.0.10
+Stable tag: 1.0.13
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -40,7 +40,15 @@ First release.
 
 == Changelog ==
 
-= 1.0.11 - JAN 13 2010
+= 1.0.13 - Feb 23 2020
+* Added new customizer options
+* Adde imge height option on instagram widget
+* Code bug Fixes
+
+= 1.0.12 - JAN 13 2020
+* Solved problem (Double click menu button on mobile).
+
+= 1.0.11 - JAN 13 2020
 * Add social network Tumblr icon
 
 = 1.0.10 - Dec 09 2019

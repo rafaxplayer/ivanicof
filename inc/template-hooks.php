@@ -4,7 +4,7 @@
  *
  * @package ivanicof
  */
-
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 if(!function_exists('ivanicof_social_links')):
 
     function ivanicof_social_links(){

@@ -1,10 +1,10 @@
-<div class="ivanicof-instagram-widget" style="max-width: <?php echo absint( $instance['container_size'] ); ?>px; margin: -<?php echo esc_attr( $instance['photo_space']/2 ); ?>px;">
+<div class="ivanicof-instagram-widget" style="max-width: <?php echo absint( $instance['container_size'] ); ?>px; ">
 		
 	<?php if ( !empty($photos) ): ?>
 
 		<?php foreach ( $photos as $photo ): ?>
 		
-			<div class="insta-item" style="padding: <?php echo esc_attr( $instance['photo_space']/2 ); ?>px; -webkit-box-flex: 0;-ms-flex: 0 0 <?php echo esc_attr( $size['flex'] ); ?>%; flex: 0 0 <?php echo esc_attr( $size['flex'] ); ?>%; ">
+			<div class="insta-item" style="padding: <?php echo esc_attr( $instance['photo_space']/2 ); ?>px; -webkit-box-flex: 0;-ms-flex: 0 0 <?php echo esc_attr( $size['flex'] ); ?>%; flex: 0 0 <?php echo esc_attr( $size['flex'] ); ?>%; max-height: <?php echo esc_attr( $instance['photo_max_height'] ); ?>px;">
 				
 					
 				<img src="<?php echo esc_attr( $photo[$size['thumbnail']] ); ?>" alt="<?php echo esc_attr( $photo['caption'] ); ?>">
