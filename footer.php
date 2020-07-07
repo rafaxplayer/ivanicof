@@ -14,10 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+
 		<?php 
+		if(has_nav_menu('menu-2')):
+			wp_nav_menu( array(
+				'theme_location' => 'menu-2',
+				'menu_id'        => 'footer-menu'
+			) );
+		endif;
+		
 		if( get_theme_mod('ivanicof_footer_social_icons',ivanicof_setting_default('ivanicof_footer_social_icons')) ):
 			do_action('ivanicof_social_icons'); 
 		endif;?>
+		
 		<div class="site-info">
 			
 			<?php

@@ -491,6 +491,28 @@ function ivanicof_customize_register( $wp_customize ) {
 
 	));
 
+	/* youtube*/
+	$wp_customize->add_setting( 'ivanicof_youtube', array( 
+		'sanitize_callback' => 'esc_url_raw') );
+
+	$wp_customize->add_control( 'ivanicof_youtube_control', array(
+	'label'      => esc_html__( 'Youtube Url', 'ivanicof' ),
+	'section'    => 'ivanicof_social_section',
+	'settings'    => 'ivanicof_youtube',
+
+	));
+
+	/* github*/
+	$wp_customize->add_setting( 'ivanicof_github', array( 
+		'sanitize_callback' => 'esc_url_raw') );
+
+	$wp_customize->add_control( 'ivanicof_github_control', array(
+	'label'      => esc_html__( 'Github Url', 'ivanicof' ),
+	'section'    => 'ivanicof_social_section',
+	'settings'    => 'ivanicof_github',
+
+	));
+
 	/* End social section */
 
 	/* Footer options */
@@ -515,7 +537,7 @@ function ivanicof_customize_register( $wp_customize ) {
 		)
 	) );
 
-	/*Instagram*/     
+	/*Footer text*/     
 	$wp_customize->add_setting( 'ivanicof_footer_text', array( 
 			'sanitize_callback' => 'sanitize_text_field'
 		) 

@@ -6,7 +6,7 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Requires at least: 4.5
 Tested up to: 5.2
 Requires PHP: 7.0
-Stable tag: 1.0.13
+Stable tag: 1.0.17
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -39,6 +39,17 @@ Ivanicof theme screenshot images are licensed under [CC0].
 First release.
 
 == Changelog ==
+
+= 1.0.17 - May 08 2020
+* Code bug Fixes
+
+= 1.0.16 - May 08 2020
+* Added menu footer
+
+= 1.0.15 - May 07 2020
+* Added new customizer options
+* Added new social icons ( Youtube, Github )
+* Code bug Fixes
 
 = 1.0.13 - Feb 23 2020
 * Added new customizer options

@@ -18,27 +18,31 @@ if(!function_exists('ivanicof_social_links')):
                     $linkedin = get_theme_mod('ivanicof_linkedin');
                     $youtube = get_theme_mod('ivanicof_youtube');
                     $tumblr = get_theme_mod('ivanicof_tumblr');
+                    $github = get_theme_mod('ivanicof_github');
 
                 if(!empty($facebook)):?>
-                    <a href="<?php echo esc_url($facebook); ?>"><i class="fa fa-facebook"></i></a>
+                    <a href="<?php echo esc_url($facebook); ?>"><i class="fa fa-facebook" title="facebook"></i></a>
                 <?php endif;
                 if(!empty($twitter)):?>
-                    <a href="<?php echo esc_url($twitter); ?>"><i class="fa fa-twitter"></i></a>
+                    <a href="<?php echo esc_url($twitter); ?>"><i class="fa fa-twitter" title="twitter"></i></a>
                 <?php endif;
                 if(!empty($instagram)):?>
-                    <a href="<?php echo esc_url($instagram); ?>"><i class="fa fa-instagram"></i></a>
+                    <a href="<?php echo esc_url($instagram); ?>"><i class="fa fa-instagram" title="instagram"></i></a>
                 <?php endif;
                 if(!empty($pinterest)):?>
-                <a href="<?php echo esc_url($pinterest); ?>"><i class="fa fa-pinterest-p"></i></a>
+                <a href="<?php echo esc_url($pinterest); ?>"><i class="fa fa-pinterest-p" title="pinterest"></i></a>
                 <?php endif;
                 if(!empty($linkedin)):?>
-                <a href="<?php echo esc_url($linkedin); ?>"><i class="fa fa-linkedin"></i></a>
+                <a href="<?php echo esc_url($linkedin); ?>"><i class="fa fa-linkedin" title="linkedin"></i></a>
                 <?php endif;
                 if(!empty($youtube)):?>
-                    <a href="<?php echo esc_url($youtube); ?>"><i class="fa fa-youtube"></i></a>
+                    <a href="<?php echo esc_url($youtube); ?>"><i class="fa fa-youtube-play" title="youtube"></i></a>
                 <?php endif;
                 if(!empty($tumblr)):?>
-                    <a href="<?php echo esc_url($tumblr); ?>"><i class="fa fa-tumblr"></i></a>
+                    <a href="<?php echo esc_url($tumblr); ?>"><i class="fa fa-tumblr" title="tumbrl"></i></a>
+                <?php endif;
+                if(!empty($github)):?>
+                    <a href="<?php echo esc_url($github); ?>"><i class="fa fa-github" title="github"></i></a>
                 <?php endif;?>
             </div>
         <?php

@@ -4,7 +4,7 @@ Theme URI: https://es.wordpress.org/themes/ivanicof/
 Author: J.Rafael simarro
 Author URI: https:///juanrafaelsimarro.com
 Description: A theme for blog in WordPress.
-Version: 1.0.13
+Version: 1.0.17
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: ivanicof
@@ -880,12 +880,25 @@ a:active {
     cursor: pointer;
 }
 
-.current-menu-item>a {
+.main-navigation .current-menu-item>a {
     color: #a07014;
     font-size: 1.5em;
     border-bottom: 1px solid #a07014;
 }
+.menu-footer-container{
+    text-align: center;
+}
+#footer-menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+#footer-menu li{
+    padding: .5rem;
+}
 @media screen and (max-width: 37.5em) {
     .sub-menu li a:after {
         font-family: FontAwesome;
