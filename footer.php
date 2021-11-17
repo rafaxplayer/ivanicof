@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ivanicof' ), 'ivanicof', '<a href="https://juanrafaelsimarro.com/">JRS</a>' );?>
+				printf( esc_html__( 'Theme: %1$s', 'ivanicof' ), 'ivanicof');?>
 				</div>
 			
 		</div><!-- .site-info -->
